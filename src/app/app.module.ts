@@ -8,14 +8,25 @@ import { BookComponent } from "./book/book.component";
 import { FormComponent } from "./form/form.component";
 import { CloudinaryModule } from "@cloudinary/angular-5.x";
 import * as Cloudinary from "cloudinary-core";
+import { FileUploadModule } from "ng2-file-upload";
+import { PhotoUploadComponent } from "./photo-upload/photo-upload.component";
 
 @NgModule({
-  declarations: [AppComponent, BookComponent, FormComponent],
+  declarations: [
+    AppComponent,
+    BookComponent,
+    FormComponent,
+    PhotoUploadComponent
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    CloudinaryModule.forRoot(Cloudinary, { cloud_name: "babybook" })
+    CloudinaryModule.forRoot(Cloudinary, {
+      cloud_name: "babybook",
+      upload_preset: "custom_default"
+    }),
+    FileUploadModule
   ],
   providers: [],
   bootstrap: [AppComponent]

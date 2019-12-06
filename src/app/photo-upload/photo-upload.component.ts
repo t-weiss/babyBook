@@ -6,32 +6,14 @@ import {
   ParsedResponseHeaders
 } from "ng2-file-upload";
 import { Cloudinary } from "@cloudinary/angular-5.x";
-import { formatDate } from "@angular/common";
 
 @Component({
-  selector: "app-book",
-  templateUrl: "./book.component.html",
-  styleUrls: ["./book.component.css"]
+  selector: "app-photo-upload",
+  templateUrl: "photo-upload.component.html"
 })
-export class BookComponent implements OnInit {
-  selectedFile = null;
-
+export class PhotoUploadComponent implements OnInit {
   @Input()
   responses: Array<any>;
-
-  onSelect(event) {
-    this.selectedFile = event.target.files[0];
-  }
-
-  onUpload() {
-    let thing = new FormData();
-    thing.append("image", this.selectedFile);
-    this.http
-      .post("https://api.cloudinary.com/v1_1/babybook/image/upload", thing)
-      .subscribe(res => {
-        console.log(res);
-      });
-  }
 
   private hasBaseDropZoneOver: boolean = false;
   private uploader: FileUploader;
