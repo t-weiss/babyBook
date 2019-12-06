@@ -1,1 +1,16 @@
 <p>book works!</p>
+
+<!-- <input type="file" ng2FileSelect [uploader]="uploader" /> -->
+<!-- <button [disabled]="loading" (click)="upload()" class="btn">Upload</button> -->
+
+<div>
+  <form enctype="multipart/form-data">
+    <input type="file" (change)="onSelect($event)" />
+    <button type="button" (click)="onUpload()">submit</button>
+  </form>
+  <label>Choose file</label>
+</div>
+
+<div>
+  <cl-image public-id="dog.jpg"> </cl-image>
+</div>
