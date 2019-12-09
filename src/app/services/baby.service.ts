@@ -10,21 +10,22 @@ export class BabyService {
     {
       title: "Birth",
       description: "Baby's birth",
-      date: "2015-01-08"
+      date: new Date("2015-01-08")
     },
     {
       title: "started Sprinting Today",
       description: "just got up and started to run!!",
-      date: "2016-02-09"
+      date: new Date("2019-02-09")
     },
     {
       title: "first tooth",
       description: "billy got his first tooth",
-      date: "2017-03-10"
+      date: new Date("2017-03-10")
     }
   ];
 
   sortedEvents;
+
   //  this.sortedEvents = this.events.sort((a, b) => b.date - a.date);
 
   getEvents(): any {

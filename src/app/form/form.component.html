@@ -1,17 +1,22 @@
-<form (ngSubmit)="onSubmit()" #form="ngForm">
+<form (ngSubmit)="onSubmit(form.value)" #form="ngForm">
   <label for="title">Title</label>
-  <input [(ngModel)]="newEvent.title" type="text" name="title" id="title" />
+  <!-- <input [(ngModel)]="newEvent.title" type="text" name="title" id="title" /> -->
+  <input ngModel type="text" name="title" id="title" />
 
   <label for="description">Description</label>
-  <input
+  <!-- <input
     [(ngModel)]="newEvent.description"
     type="text"
     name="description"
     id="description"
-  />
+  /> -->
+  <input ngModel type="text" name="description" id="description" />
 
   <label for="date">Date</label>
-  <input [(ngModel)]="newEvent.date" type="date" name="date" id="date" />
+  <!-- <input [(ngModel)]="newEvent.date" type="date" name="date" id="date" /> -->
+  <input ngModel type="date" name="date" id="date" />
 
-  <button type="submit">Add Event</button>
+  <app-photo-upload></app-photo-upload>
+
+  <button>Add Event</button>
 </form>
