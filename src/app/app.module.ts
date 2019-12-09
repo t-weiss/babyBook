@@ -10,6 +10,7 @@ import { CloudinaryModule } from "@cloudinary/angular-5.x";
 import * as Cloudinary from "cloudinary-core";
 import { FileUploadModule } from "ng2-file-upload";
 import { PhotoUploadComponent } from "./photo-upload/photo-upload.component";
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { PhotoUploadComponent } from "./photo-upload/photo-upload.component";
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
     CloudinaryModule.forRoot(Cloudinary, {
       cloud_name: "babybook",
       upload_preset: "custom_default"
