@@ -10,17 +10,20 @@ export class BabyService {
     {
       title: "Birth",
       description: "Baby's birth",
-      date: new Date("2015-01-08")
+      date: new Date("2015-01-08"),
+      image: "angular_sample/j9cuot6lolemzppjt8gz.png"
     },
     {
       title: "started Sprinting Today",
       description: "just got up and started to run!!",
-      date: new Date("2019-02-09")
+      date: new Date("2019-02-09"),
+      image: "angular_sample/j9cuot6lolemzppjt8gz.png"
     },
     {
       title: "first tooth",
       description: "billy got his first tooth",
-      date: new Date("2017-03-10")
+      date: new Date("2017-03-10"),
+      image: "angular_sample/j9cuot6lolemzppjt8gz.png"
     }
   ];
 

@@ -1,4 +1,11 @@
-import { Component, OnInit, Input, NgZone } from "@angular/core";
+import {
+  Component,
+  OnInit,
+  Input,
+  NgZone,
+  Output,
+  EventEmitter
+} from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import {
   FileUploader,
@@ -14,6 +21,9 @@ import { Cloudinary } from "@cloudinary/angular-5.x";
 export class PhotoUploadComponent implements OnInit {
   @Input()
   responses: Array<any>;
+
+  @Output()
+  publicId = new EventEmitter<string>();
 
   private hasBaseDropZoneOver: boolean = false;
   private uploader: FileUploader;
@@ -108,12 +118,18 @@ export class PhotoUploadComponent implements OnInit {
       response: string,
       status: number,
       headers: ParsedResponseHeaders
-    ) =>
+    ) => {
+      const data = JSON.parse(response);
+
       upsertResponse({
         file: item.file,
         status,
-        data: JSON.parse(response)
+        data
       });
+
+      console.log(data.public_id);
+      this.publicId.emit(data.public_id);
+    };
 
     // Update model on upload progress event
     this.uploader.onProgressItem = (fileItem: any, progress: any) =>

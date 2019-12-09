@@ -7,23 +7,27 @@ import { BabyService } from "../services/baby.service";
   styleUrls: ["./form.component.css"]
 })
 export class FormComponent implements OnInit {
-  // newEvent = {
-  //   title: "",
-  //   description: "",
-  //   date: new Date("")
-  // };
+  photoIds = "";
 
   constructor(private babyService: BabyService) {}
   onSubmit(form: any): void {
     let newEvent = {
-      title: form.title,
-      description: form.description,
-      date: new Date(form.date)
+      title: form.value.title,
+      description: form.value.description,
+      date: new Date(form.value.date),
+      image: this.photoIds
     };
+
     this.babyService.setEvents(newEvent);
     console.log(this.babyService.events);
     console.log(newEvent);
     this.babyService.events.sort((a, b) => b.date - a.date);
+    form.reset();
+  }
+
+  getPhotoId(id) {
+    this.photoIds = id;
+    console.log("get id", id);
   }
 
   ngOnInit() {}

@@ -13,7 +13,7 @@ export class BookComponent implements OnInit {
   ngOnInit() {
     this.events = this.babyService.getEvents();
     console.log(this.events);
-    this.events.sort((a, b) => b.date - a.date);
+    this.events.sort((a, b) => a.date - b.date);
     console.log(this.events);
   }
 }
