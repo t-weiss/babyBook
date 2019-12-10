@@ -10,10 +10,12 @@ import { Router } from "@angular/router";
 export class BookComponent implements OnInit {
   events: any[];
   status: boolean = false;
+  index: number;
   constructor(private babyService: BabyService, private router: Router) {}
 
-  clickEvent() {
+  clickEvent(index: number) {
     this.status = !this.status;
+    this.index = index;
   }
   addNewEvent() {
     this.router.navigate(["form"]);
