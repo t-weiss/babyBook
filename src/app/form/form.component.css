@@ -22,6 +22,7 @@ input {
   padding: 10px;
   border-radius: 10px;
   margin-top: 5px;
+  border: none;
   /* background-image: linear-gradient(to right, pink, lightblue); */
 }
 
@@ -29,7 +30,7 @@ label {
   font-size: 1em;
 }
 
-textarea{
+textarea {
   width: 98%;
   margin-bottom: 10px;
   border-radius: 10px;

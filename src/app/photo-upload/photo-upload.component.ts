@@ -16,8 +16,10 @@ import { Cloudinary } from "@cloudinary/angular-5.x";
 
 @Component({
   selector: "app-photo-upload",
-  templateUrl: "photo-upload.component.html"
+  templateUrl: "photo-upload.component.html",
+  styleUrls: ["./photo-upload.component.css"]
 })
+  
 export class PhotoUploadComponent implements OnInit {
   @Input()
   responses: Array<any>;
