@@ -1,0 +1,37 @@
+form {
+  /* border: 1px solid black; */
+  box-shadow: 20px 20px 50px 10px rgba(204, 204, 204, 1);
+  margin: 20px 60px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+input {
+  display: block;
+  width: 98%;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  /* border: none;
+  border-bottom: 1px solid grey; */
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 5px;
+  /* background-image: linear-gradient(to right, pink, lightblue); */
+}
+
+label {
+  font-size: 1em;
+}
+
+textarea{
+  width: 98%;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  padding: 12px;
+}
