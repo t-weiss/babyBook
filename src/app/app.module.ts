@@ -11,13 +11,15 @@ import * as Cloudinary from "cloudinary-core";
 import { FileUploadModule } from "ng2-file-upload";
 import { PhotoUploadComponent } from "./photo-upload/photo-upload.component";
 import { FormsModule } from "@angular/forms";
+import { HomeComponent } from "./home/home.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     BookComponent,
     FormComponent,
-    PhotoUploadComponent
+    PhotoUploadComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

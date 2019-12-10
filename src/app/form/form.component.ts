@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { BabyService } from "../services/baby.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-form",
@@ -9,7 +10,7 @@ import { BabyService } from "../services/baby.service";
 export class FormComponent implements OnInit {
   photoIds = "";
 
-  constructor(private babyService: BabyService) {}
+  constructor(private babyService: BabyService, private router: Router) {}
   onSubmit(form: any): void {
     let newEvent = {
       title: form.value.title,
@@ -21,8 +22,9 @@ export class FormComponent implements OnInit {
     this.babyService.setEvents(newEvent);
     console.log(this.babyService.events);
     console.log(newEvent);
-    this.babyService.events.sort((a, b) => b.date - a.date);
+    this.babyService.events.sort((a, b) => a.date - b.date);
     form.reset();
+    this.router.navigate(["book"]);
   }
 
   getPhotoId(id) {

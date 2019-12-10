@@ -8,7 +8,12 @@ import { BabyService } from "../services/baby.service";
 })
 export class BookComponent implements OnInit {
   events: any[];
+  status: boolean = false;
   constructor(private babyService: BabyService) {}
+
+  clickEvent() {
+    this.status = !this.status;
+  }
 
   ngOnInit() {
     this.events = this.babyService.getEvents();

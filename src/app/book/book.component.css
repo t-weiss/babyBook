@@ -1,0 +1,24 @@
+.parent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.event {
+  background-color: white;
+  width: 75%;
+  text-align: center;
+  margin: 20px;
+}
+
+.pic {
+  height: 500px;
+}
+
+.expanded {
+  height: 300px;
+}
+
+.notExpanded {
+  height: 100px;
+}

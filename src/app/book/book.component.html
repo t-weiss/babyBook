@@ -1,10 +1,18 @@
-<p>book works!</p>
+<h1>someone's timeline</h1>
 
-<div>
-  <div *ngFor="let event of events; index as i">
+<div class="parent">
+  <div
+    class="event"
+    *ngFor="let event of events; index as i"
+    [ngclass]="{ expanded: status, notExpanded: !status }"
+  >
     <h2>{{ event.title }}</h2>
     <p>{{ event.date }}</p>
     <p>{{ event.description }}</p>
-    <cl-image [public-id]="event.image"></cl-image>
+    <cl-image class="pic" [public-id]="event.image"></cl-image>
   </div>
 </div>
+
+<!-- [ngclass]="{status ? 'expanded' : 'notExpanded'}" -->
+
+<!-- (click)="clickEvent()" -->
