@@ -4,7 +4,8 @@
   <div
     class="event"
     *ngFor="let event of events; index as i"
-    [ngclass]="{ expanded: status, notExpanded: !status }"
+    [ngClass]="{ expanded: status, notExpanded: !status }"
+    (click)="clickEvent()"
   >
     <h2>{{ event.title }}</h2>
     <p>{{ event.date }}</p>
@@ -13,6 +14,6 @@
   </div>
 </div>
 
-<!-- [ngclass]="{status ? 'expanded' : 'notExpanded'}" -->
-
-<!-- (click)="clickEvent()" -->
+<!-- [ngclass]="{status ? 'expanded' : 'notExpanded'}"
+(click)="clickEvent()" [ngclass]="{ expanded: status, notExpanded: !status }"
+-->
