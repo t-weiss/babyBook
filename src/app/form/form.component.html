@@ -3,22 +3,14 @@
   <!-- <input [(ngModel)]="newEvent.title" type="text" name="title" id="title" /> -->
   <input ngModel type="text" name="title" id="title" />
 
-  <label for="description">Description</label>
-  <!-- <input
-    [(ngModel)]="newEvent.description"
-    type="text"
-    name="description"
-    id="description"
-  /> -->
-  <input ngModel type="text" name="description" id="description" />
-
   <label for="date">Date</label>
-  <!-- <input [(ngModel)]="newEvent.date" type="date" name="date" id="date" /> -->
   <input ngModel type="date" name="date" id="date" />
 
-  <app-photo-upload (publicId)="getPhotoId($event)"></app-photo-upload>
-  <label for="photoid">Photo Id </label>
-  <input ngModel type="text" name="photoid" id="photoid" />
+  <label for="description">Description</label>
+  <textarea rows="10" cols="100" name="description" id="description">
+  </textarea>
 
-  <button>Add Event</button>
+  <app-photo-upload (publicId)="getPhotoId($event)"></app-photo-upload>
+
+  <button class="btn">Add Event</button>
 </form>

@@ -1,3 +1,24 @@
-h1 {
-  color: red;
+.form-control {
+  display: block;
+  width: 98%;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+.upload_button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 5px;
+  background-color: white;
+  border-radius: 10px;
+  border: black 1px solid;
+
+}
+
+.img{
+  width: 100px;
+  height: 100px;
 }
