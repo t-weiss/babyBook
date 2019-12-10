@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { BabyService } from "../services/baby.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-book",
@@ -9,10 +10,13 @@ import { BabyService } from "../services/baby.service";
 export class BookComponent implements OnInit {
   events: any[];
   status: boolean = false;
-  constructor(private babyService: BabyService) {}
+  constructor(private babyService: BabyService, private router: Router) {}
 
   clickEvent() {
     this.status = !this.status;
+  }
+  addNewEvent() {
+    this.router.navigate(["form"]);
   }
 
   ngOnInit() {

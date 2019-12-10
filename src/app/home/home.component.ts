@@ -9,9 +9,9 @@ import { Router } from "@angular/router";
 export class HomeComponent implements OnInit {
   constructor(private router: Router) {}
 
-  // startTimeLine() {
-  //   this.router.navigate(["form"]);
-  // }
+  startTimeLine() {
+    this.router.navigate(["form"]);
+  }
 
   ngOnInit() {}
 }
