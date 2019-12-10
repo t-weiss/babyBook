@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
+import { BabyService } from "../services/baby.service";
 
 @Component({
   selector: "app-home",
@@ -7,10 +8,16 @@ import { Router } from "@angular/router";
   styleUrls: ["./home.component.css"]
 })
 export class HomeComponent implements OnInit {
-  constructor(private router: Router) {}
+  constructor(private router: Router, private babyService: BabyService) {}
 
-  startTimeLine() {
+  onSubmit(form: any): void {
+    let birthStart = {
+      name: form.value.childName,
+      birthday: new Date(form.value.birthday)
+    };
     this.router.navigate(["form"]);
+    this.babyService.setBabyName(birthStart);
+    console.log(birthStart);
   }
 
   ngOnInit() {}

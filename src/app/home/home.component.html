@@ -13,16 +13,22 @@
         timeline to document the growth of your child. Allong the way enjoy
         relevent develovement facts and benchmarks.
       </p>
-      <form>
+      <form (ngSubmit)="onSubmit(form)" #form="ngForm">
         <h3>Start a new time line!</h3>
         <label for="childName">This timeline is for: </label>
-        <input type="text" placeholder="name" name="childName" id="childName" />
+        <input
+          ngModel
+          type="text"
+          placeholder="name"
+          name="childName"
+          id="childName"
+        />
         <br />
         <label for="birthday">Brithday </label>
-        <input type="date" name="birthday" id="birthday" />
+        <input ngModel type="date" name="birthday" id="birthday" />
         <br />
         <!-- <a routerLink="/form">start</a> -->
-        <button (click)="startTimeLine()">Lets Begin!</button>
+        <button>Lets Begin!</button>
       </form>
     </div>
   </div>
