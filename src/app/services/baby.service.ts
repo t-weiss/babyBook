@@ -79,6 +79,7 @@ export class BabyService {
   ];
 
   sortedEvents;
+  myBirthStart;
 
   //  this.sortedEvents = this.events.sort((a, b) => b.date - a.date);
 
@@ -91,9 +92,33 @@ export class BabyService {
   }
 
   constructor(private http: HttpClient) {}
-  getPhotos(): Observable<any> {
-    return this.http.get(
-      "CLOUDINARY_URL=cloudinary://525113569772349:HJt3S_txALgDBo1a-NcuIcZ_WDA@babybook"
-    );
+  // getPhotos(): Observable<any> {
+  //   return this.http.get(
+  //     "CLOUDINARY_URL=cloudinary://525113569772349:HJt3S_txALgDBo1a-NcuIcZ_WDA@babybook"
+  //   );
+  // }
+
+  setBabyName(birthStart): void {
+    this.myBirthStart = birthStart;
+    console.log(birthStart);
+  }
+
+  getBirthStart(): any {
+    return this.myBirthStart;
+  }
+  getAge() {
+    let today = new Date();
+    let birthday = new Date(this.myBirthStart.birthday);
+    console.log(birthday);
+    let age = today.getFullYear() - birthday.getFullYear();
+    console.log(age);
+    let m = today.getMonth() - birthday.getMonth();
+    console.log(m);
+    m = age * 12 + m;
+    console.log(m);
+    if (m < 0 || (m === 0 && today.getDate() < birthday.getDate())) {
+      m--;
+    }
+    return m;
   }
 }

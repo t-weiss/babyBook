@@ -11,6 +11,9 @@ export class BookComponent implements OnInit {
   events: any[];
   status: boolean = false;
   index: number;
+  birth: any;
+  age: any;
+
   constructor(private babyService: BabyService, private router: Router) {}
 
   clickEvent(index: number) {
@@ -26,5 +29,9 @@ export class BookComponent implements OnInit {
     console.log(this.events);
     this.events.sort((a, b) => a.date - b.date);
     console.log(this.events);
+    this.birth = this.babyService.getBirthStart();
+    console.log(this.birth);
+    this.age = this.babyService.getAge();
+    console.log(this.age);
   }
 }
