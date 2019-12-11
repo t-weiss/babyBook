@@ -22,12 +22,19 @@
           placeholder="name"
           name="childName"
           id="childName"
+          required
         />
         <br />
         <label for="birthday">Brithday </label>
-        <input ngModel type="date" name="birthday" id="birthday" />
+        <input
+          ngModel
+          type="date"
+          name="birthday"
+          id="birthday"
+          #birthday="ngModel"
+          required
+        />
         <br />
-        <!-- <a routerLink="/form">start</a> -->
         <button>Lets Begin!</button>
       </form>
     </div>

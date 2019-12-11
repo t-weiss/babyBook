@@ -1,27 +1,8 @@
 <h1>{{ birth.name }}</h1>
 <p>{{ birth.birthday }}</p>
 
-<!-- <div class="parent">
-  <div
-    class="event"
-    *ngFor="let event of events; index as i"
-    [ngClass]="{ expanded: status, notExpanded: !status }"
-    (click)="clickEvent(i)"
-  >
-    <h2>{{ event.title }}</h2>
-    <cl-image class="pic" [public-id]="event.image"></cl-image>
-    <div class="innerEvent" *ngIf="index === i">
-      <p>{{ event.date }}</p>
-      <p>{{ event.description }}</p>
-      <cl-image class="pic" [public-id]="event.image"></cl-image>
-    </div>
-  </div>
-</div> -->
 <button (click)="addNewEvent()">add new event</button>
 
-<!-- [ngclass]="{status ? 'expanded' : 'notExpanded'}"
-(click)="clickEvent()" [ngclass]="{ expanded: status, notExpanded: !status }"
--->
 <div class="parent">
   <div class="event" *ngFor="let event of events; index as i">
     <div (click)="clickEvent(i)">
@@ -35,3 +16,17 @@
     </div>
   </div>
 </div>
+
+<div>
+  <h4>Upcoming Milestones to look forwrd to!</h4>
+  <p>{{ tips[tipNumb].tip1 }}</p>
+  <p>{{ tips[tipNumb].tip2 }}</p>
+  <p>{{ tips[tipNumb].tip3 }}</p>
+</div>
+
+<!-- <div>
+    <h4>Baby Milestones that mey be helpful</h4>
+    <p>{{ tips[{{tipNumb}}].tip1 }}</p>
+    <p>{{ tips[{{tipNumb}}].tip2 }}</p>
+    <p>{{ tips[{{TipNumb}}].tip3 }}</p>
+  </div> -->

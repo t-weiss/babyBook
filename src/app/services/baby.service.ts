@@ -10,8 +10,7 @@ export class BabyService {
     {
       title: "Baby Developmental Milestones: By 3 Months",
       tip1: "May raise head and chest while on tummy.",
-      tip2: "Opens and shuts hands",
-      tip3: "Pushes down on legs when feet are on a firm surface"
+      tip2: "Opens and shuts hands"
     },
     {
       title: "Baby Developmental Milestones: By 6 Months",
@@ -92,11 +91,6 @@ export class BabyService {
   }
 
   constructor(private http: HttpClient) {}
-  // getPhotos(): Observable<any> {
-  //   return this.http.get(
-  //     "CLOUDINARY_URL=cloudinary://525113569772349:HJt3S_txALgDBo1a-NcuIcZ_WDA@babybook"
-  //   );
-  // }
 
   setBabyName(birthStart): void {
     this.myBirthStart = birthStart;
@@ -120,5 +114,9 @@ export class BabyService {
       m--;
     }
     return m;
+  }
+
+  getTips(): any {
+    return this.babyDevTips;
   }
 }

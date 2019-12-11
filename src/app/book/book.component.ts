@@ -12,9 +12,29 @@ export class BookComponent implements OnInit {
   status: boolean = false;
   index: number;
   birth: any;
-  age: any;
+  age: number;
+  tips: any[];
+  tipNumb: number;
 
   constructor(private babyService: BabyService, private router: Router) {}
+
+  ageStuff() {
+    if (this.age < 3) {
+      this.tipNumb = 0;
+    } else if (this.age <= 6 && this.age > 3) {
+      this.tipNumb = 1;
+    } else if (this.age <= 9 && this.age > 6) {
+      this.tipNumb = 2;
+    } else if (this.age <= 12 && this.age > 9) {
+      this.tipNumb = 3;
+    } else if (this.age <= 24 && this.age > 12) {
+      this.tipNumb = 4;
+    } else if (this.age <= 36 && this.age > 24) {
+      this.tipNumb = 5;
+    } else {
+      this.tipNumb = 6;
+    }
+  }
 
   clickEvent(index: number) {
     this.status = !this.status;
@@ -27,11 +47,18 @@ export class BookComponent implements OnInit {
   ngOnInit() {
     this.events = this.babyService.getEvents();
     console.log(this.events);
+
     this.events.sort((a, b) => a.date - b.date);
     console.log(this.events);
+
     this.birth = this.babyService.getBirthStart();
     console.log(this.birth);
+
     this.age = this.babyService.getAge();
     console.log(this.age);
+
+    this.tips = this.babyService.getTips();
+    console.log(this.tips);
+    this.ageStuff();
   }
 }

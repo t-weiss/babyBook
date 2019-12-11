@@ -1,5 +1,5 @@
 header {
-  background-image: linear-gradient(to bottom right, rgb(170, 217, 236), pink);
+  background-color: #aafac8;
   width: 100vw;
 }
 img {
@@ -15,7 +15,6 @@ img {
   width: 90%;
   display: flex;
   flex-direction: row;
-  background: lightgray;
   justify-content: space-around;
   border-radius: 10px;
   font-family: "Nunito", sans-serif;
@@ -28,14 +27,14 @@ img {
   margin: 2%;
 }
 form {
-  background: darkgray;
+  background: #bfc0c0;
   border-radius: 10px;
   padding: 20px;
   margin: 20px;
   text-align: center;
 }
 h1 {
-  font-family: "Lilita One", cursive;
+  font-family: "Poiret One", cursive;
   padding: 15px;
   margin-top: 0px;
 }
