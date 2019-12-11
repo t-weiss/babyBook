@@ -5,7 +5,7 @@
 
 <button (click)="addNewEvent()">add new event</button>
 
-<div class="parent">
+<!-- <div class="parent">
   <div class="event" *ngFor="let event of events; index as i">
     <div (click)="clickEvent(i)">
       <h2>{{ event.title }}</h2>
@@ -13,6 +13,24 @@
     </div>
 
     <div *ngIf="index === i">
+      <p>{{ event.date | date }}</p>
+      <p>{{ event.description }}</p>
+    </div>
+  </div>
+</div> -->
+
+<div class="parent">
+  <div class="event" *ngFor="let event of events; index as i">
+    <div (click)="clickEvent(i)" [ngClass]="{ hide: index === i }">
+      <h2>{{ event.title }}</h2>
+      <cl-image class="pic" [public-id]="event.image">
+        <cl-transformation width="0.2" crop="scale"> </cl-transformation
+      ></cl-image>
+    </div>
+
+    <div *ngIf="index === i">
+      <h2>{{ event.title }}</h2>
+      <cl-image class="pic" [public-id]="event.image"></cl-image>
       <p>{{ event.date | date }}</p>
       <p>{{ event.description }}</p>
     </div>
@@ -25,10 +43,3 @@
   <p>{{ tips[tipNumb].tip2 }}</p>
   <p>{{ tips[tipNumb].tip3 }}</p>
 </div>
-
-<!-- <div>
-    <h4>Baby Milestones that mey be helpful</h4>
-    <p>{{ tips[{{tipNumb}}].tip1 }}</p>
-    <p>{{ tips[{{tipNumb}}].tip2 }}</p>
-    <p>{{ tips[{{TipNumb}}].tip3 }}</p>
-  </div> -->

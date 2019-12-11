@@ -1,18 +1,21 @@
 .form-control {
   display: block;
-  width: 98%;
+  box-sizing: border-box;
+
+  width: 100%;
   padding: 12px;
   margin-bottom: 10px;
   border-radius: 10px;
 }
 
 .upload_button {
+  box-sizing: border-box;
   display: block;
-  width: 99%;
+  width: 100%;
   padding: 8px;
   border-radius: 10px;
   margin-top: 5px;
-  background-color: white;
+  background-color: #bfc0c0;
   border-radius: 10px;
   text-align: center;
   margin-bottom: 10px;

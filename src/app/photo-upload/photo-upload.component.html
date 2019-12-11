@@ -5,28 +5,28 @@
   (fileOver)="fileOverBase($event)"
   [ngClass]="{ 'nv-file-over': hasBaseDropZoneOver }"
 >
-  <h4>Add Photo</h4>
+  <!-- <h4>Add Photo</h4> -->
   <!--  <h2>Direct upload from the browser with Angular File Upload</h2>
   <p>You can also drag and drop an image file into the dashed area.</p> -->
   <form>
     <div class="form_line">
-      <label path="title">Title:</label>
+      <!-- <label path="title">Title:</label> -->
       <div class="form_controls">
-        <input
+        <!-- <input
           type="text"
           class="form-control"
           #title
           placeholder="Title"
           (keyup.enter)="updateTitle(title.value)"
           (blur)="updateTitle(title.value)"
-        />
+        /> -->
       </div>
     </div>
     <div class="form_line">
-      <label>Image:</label>
+      <!-- <label>Image:</label> -->
       <div class="form_controls">
         <div class="upload_button_holder">
-          <label class="upload_button" for="fileupload">Upload</label>
+          <label class="upload_button" for="fileupload">Add a photo</label>
           <!-- onChange hanlder resets the input value to get the change event when uploading the same file consecutively -->
           <input
             type="file"

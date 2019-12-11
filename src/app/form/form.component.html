@@ -1,19 +1,24 @@
 <app-header></app-header>
-<h2>Add a new life event!</h2>
+<div class="container">
+  <h2>Add a new life event!</h2>
+  <p>Fill in each field below to add a new event to your child's timeline.</p>
 
-<form (ngSubmit)="onSubmit(form)" #form="ngForm">
-  <label for="title">Title</label>
-  <!-- <input [(ngModel)]="newEvent.title" type="text" name="title" id="title" /> -->
-  <input ngModel type="text" name="title" id="title" />
+  <form (ngSubmit)="onSubmit(form)" #form="ngForm">
+    <label for="title">Title</label>
+    <!-- <input [(ngModel)]="newEvent.title" type="text" name="title" id="title" /> -->
+    <input ngModel type="text" name="title" id="title" />
 
-  <label for="date">Date</label>
-  <input ngModel type="date" name="date" id="date" />
+    <label for="date">Date</label>
+    <input ngModel type="date" name="date" id="date" />
 
-  <label for="description">Description</label>
-  <textarea rows="10" cols="100" name="description" id="description">
-  </textarea>
+    <label for="description">Description</label>
+    <textarea ngModel rows="10" cols="100" name="description" id="description">
+    </textarea>
+    <div class="titleContainer">
+      <!-- <h4>Add photo</h4> -->
+    </div>
+    <app-photo-upload (publicId)="getPhotoId($event)"></app-photo-upload>
 
-  <app-photo-upload (publicId)="getPhotoId($event)"></app-photo-upload>
-
-  <button class="btn">Add Event</button>
-</form>
+    <button class="btn">Add Event</button>
+  </form>
+</div>
