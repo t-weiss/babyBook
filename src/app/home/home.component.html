@@ -1,39 +1,40 @@
-<app-header></app-header>
+<!-- <app-header></app-header> -->
+
+
 <div class="container">
   <div class="content">
-    <img src="assets/block baby.jpg" alt="baby with block" />
-    <h1 class="center">Start Here</h1>
-    <div class="copy">
-      <h2>You make the memories, we'll keep them straight</h2>
-      <p>
-        My Memories Manager allows you to record and share the important
-        developments in the life of your child. Make your own intractive
-        timeline to document the growth of your child. Along the way enjoy
-        relevent develovement facts and benchmarks.
-      </p>
+    <div class="background">
+      <div class="ham">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+      <!-- <img src="/assets/hamMenu.png" alt="hamburger menu" class="ham"> -->
+      <div class="white">
+        <h1>My Memories Manager</h1>
+        <p>You make the memories, we'll keep them straight</p>
+      </div>
     </div>
+    <!-- <img src="assets/block baby.jpg" alt="baby with block" /> -->
+    <div class="info">
+      <div class="copy">
+        <h2 class="start">Start Here!</h2>
+        <p>
+          My Memories Manager allows you to record and share the important
+          developments in the life of your child. Make your own intractive
+          timeline to document the growth of your child. Along the way enjoy
+          relevent develovement facts and benchmarks.
+        </p>
+      </div>
 
-    <form (ngSubmit)="onSubmit(form)" #form="ngForm" class="form">
-      <h3>Start a new time line!</h3>
-      <label for="childName">This timeline is for</label>
-      <input
-        ngModel
-        type="text"
-        placeholder="name"
-        name="childName"
-        id="childName"
-        required
-      />
-      <label for="birthday">Birthday </label>
-      <input
-        ngModel
-        type="date"
-        name="birthday"
-        id="birthday"
-        #birthday="ngModel"
-        required
-      />
-      <button>Lets Begin!</button>
-    </form>
+      <form (ngSubmit)="onSubmit(form)" #form="ngForm" class="form">
+        <h3>Start a new timeline!</h3>
+        <label for="childName">This timeline is for</label>
+        <input ngModel type="text" placeholder="name" name="childName" id="childName" required />
+        <label for="birthday">Birthday </label>
+        <input ngModel type="date" name="birthday" id="birthday" #birthday="ngModel" required />
+        <button class="btn">Lets Begin!</button>
+      </form>
+    </div>
   </div>
 </div>
