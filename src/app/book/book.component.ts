@@ -54,8 +54,8 @@ export class BookComponent implements OnInit {
     this.birth = this.babyService.getBirthStart();
     console.log(this.birth);
 
-    this.age = this.babyService.getAge();
-    console.log(this.age);
+    // this.age = this.babyService.getAge();
+    // console.log(this.age);
 
     this.tips = this.babyService.getTips();
     console.log(this.tips);

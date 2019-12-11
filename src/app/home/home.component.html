@@ -1,42 +1,39 @@
-<header>
-  <h1>My Memories Manager</h1>
-</header>
+<app-header></app-header>
 <div class="container">
   <div class="content">
     <img src="assets/block baby.jpg" alt="baby with block" />
-
+    <h1 class="center">Start Here</h1>
     <div class="copy">
       <h2>You make the memories, we'll keep them straight</h2>
       <p>
         My Memories Manager allows you to record and share the important
         developments in the life of your child. Make your own intractive
-        timeline to document the growth of your child. Allong the way enjoy
+        timeline to document the growth of your child. Along the way enjoy
         relevent develovement facts and benchmarks.
       </p>
-      <form (ngSubmit)="onSubmit(form)" #form="ngForm">
-        <h3>Start a new time line!</h3>
-        <label for="childName">This timeline is for: </label>
-        <input
-          ngModel
-          type="text"
-          placeholder="name"
-          name="childName"
-          id="childName"
-          required
-        />
-        <br />
-        <label for="birthday">Brithday </label>
-        <input
-          ngModel
-          type="date"
-          name="birthday"
-          id="birthday"
-          #birthday="ngModel"
-          required
-        />
-        <br />
-        <button>Lets Begin!</button>
-      </form>
     </div>
+
+    <form (ngSubmit)="onSubmit(form)" #form="ngForm" class="form">
+      <h3>Start a new time line!</h3>
+      <label for="childName">This timeline is for</label>
+      <input
+        ngModel
+        type="text"
+        placeholder="name"
+        name="childName"
+        id="childName"
+        required
+      />
+      <label for="birthday">Birthday </label>
+      <input
+        ngModel
+        type="date"
+        name="birthday"
+        id="birthday"
+        #birthday="ngModel"
+        required
+      />
+      <button>Lets Begin!</button>
+    </form>
   </div>
 </div>

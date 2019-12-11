@@ -12,6 +12,7 @@ import { FileUploadModule } from "ng2-file-upload";
 import { PhotoUploadComponent } from "./photo-upload/photo-upload.component";
 import { FormsModule } from "@angular/forms";
 import { HomeComponent } from "./home/home.component";
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { HomeComponent } from "./home/home.component";
     BookComponent,
     FormComponent,
     PhotoUploadComponent,
-    HomeComponent
+    HomeComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
