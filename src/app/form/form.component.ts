@@ -26,6 +26,9 @@ export class FormComponent implements OnInit {
     form.reset();
     this.router.navigate(["book"]);
   }
+  nextPage() {
+    this.router.navigate(["book"]);
+  }
 
   getPhotoId(id) {
     this.photoIds = id;
