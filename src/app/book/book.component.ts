@@ -10,7 +10,7 @@ import { Router } from "@angular/router";
 export class BookComponent implements OnInit {
   events: any[];
   status: boolean = false;
-  index: number;
+  index: number = 0;
   birth: any;
   age: number;
   tips: any[];
