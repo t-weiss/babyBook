@@ -8,7 +8,7 @@ import { Router } from "@angular/router";
   styleUrls: ["./form.component.css"]
 })
 export class FormComponent implements OnInit {
-  photoIds = "";
+  photoIds = "angular_sample/wmny0d3cecsdempeusfc.jpg";
 
   constructor(private babyService: BabyService, private router: Router) {}
   onSubmit(form: any): void {
