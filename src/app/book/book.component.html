@@ -26,7 +26,12 @@
       <div (click)="clickEvent(i)" [ngClass]="{ hide: index === i }">
         <h2>{{ event.title }}</h2>
         <cl-image class="pic" [public-id]="event.image">
-          <cl-transformation width="350" height="100" gravity="face" crop="fill">
+          <cl-transformation
+            width="350"
+            height="100"
+            gravity="face"
+            crop="fill"
+          >
           </cl-transformation>
           <!-- <cl-transformation width="0.2" crop="scale"> </cl-transformation -->
           >
