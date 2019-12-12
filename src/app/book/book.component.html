@@ -20,24 +20,39 @@
 </div> -->
 
 <div class="parent">
-  <div class="event" *ngFor="let event of events; index as i">
-    <div (click)="clickEvent(i)" [ngClass]="{ hide: index === i }">
-      <h2>{{ event.title }}</h2>
-      <cl-image class="pic" [public-id]="event.image">
-        <cl-transformation width="0.2" crop="scale"> </cl-transformation
-      ></cl-image>
-    </div>
+  <div class="testParent">
+    <div class="event" *ngFor="let event of events; index as i">
+      <div (click)="clickEvent(i)" [ngClass]="{ hide: index === i }">
+        <h2>{{ event.title }}</h2>
+        <cl-image class="pic" [public-id]="event.image">
+          <cl-transformation
+            width="350"
+            height="100"
+            gravity="face"
+            crop="fill"
+          >
+          </cl-transformation>
+          <!-- <cl-transformation width="0.2" crop="scale"> </cl-transformation -->
+          ></cl-image
+        >
+      </div>
 
-    <div *ngIf="index === i">
-      <h2>{{ event.title }}</h2>
-      <cl-image class="pic" [public-id]="event.image"></cl-image>
-      <p>{{ event.date | date }}</p>
-      <p>{{ event.description }}</p>
+      <div class="expanded" *ngIf="index === i">
+        <h2>{{ event.title }}</h2>
+        <div class="picBox">
+          <cl-image class="pic" [public-id]="event.image">
+            <cl-transformation width="400" height="400" crop="fit">
+            </cl-transformation
+          ></cl-image>
+        </div>
+        <p>{{ event.date | date }}</p>
+        <p>{{ event.description }}</p>
+      </div>
     </div>
   </div>
 </div>
 
-<div>
+<div class="babyFacts">
   <h4>Upcoming Milestones to look forwrd to!</h4>
   <p>{{ tips[tipNumb].tip1 }}</p>
   <p>{{ tips[tipNumb].tip2 }}</p>
