@@ -7,6 +7,13 @@
   align-content: center;
 }
 
+.text {
+  text-align: center;
+  margin-bottom: 10px;
+
+  font-weight: 200;
+}
+
 form {
   /* border: 1px solid black; */
   /* box-shadow: 20px 20px 50px 10px rgba(204, 204, 204, 1); */
@@ -45,7 +52,11 @@ input {
 label {
   font-size: 1em;
 }
-
+.title {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 26px;
+}
 textarea {
   box-sizing: border-box;
   width: 100%;
@@ -56,6 +67,22 @@ textarea {
 
 .titleContainer {
   text-align: center;
+}
+
+.toEvents {
+  display: block;
+  width: 97%;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 5px;
+  border: none;
+  background-color: #aafac8;
+  font-weight: bold;
+  margin: 10px;
+  box-sizing: border-box;
+  align-self: center;
+  margin-top: 30px;
+  margin-right: 10px;
 }
 @media screen and (min-width: 600px) {
   .container {
@@ -79,5 +106,28 @@ textarea {
   }
   form {
     width: 50%;
+  }
+  .toEvents {
+    position: absolute;
+    right: 100px;
+    top: 100px;
+    display: block;
+    width: 200px;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 5px;
+    background-color: #aafac8;
+    font-weight: 900px;
+  }
+  .title {
+    margin-top: 150px;
+    margin-bottom: 20px;
+    font-size: 40px;
+  }
+  .text {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: x-large;
+    font-weight: 200;
   }
 }
