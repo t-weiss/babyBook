@@ -59,7 +59,8 @@ export class BabyService {
   events: any[] = [
     {
       title: "Birth",
-      description: "Baby's birth",
+      description:
+        "Baby's birth, aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa ddddddddddddddddddddddddd ffffffff Baby's birth, aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa ddddddddddddddddddddddddd ffffffff Baby's birth, aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa ddddddddddddddddddddddddd ffffffff ",
       date: new Date("2015-01-08"),
       image: "angular_sample/h7jdjaee28qjxlvfmu7h.jpg"
     },
