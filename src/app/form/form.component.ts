@@ -19,10 +19,9 @@ export class FormComponent implements OnInit {
       image: this.photoIds
     };
 
-    this.babyService.setEvents(newEvent);
+    this.babyService.addEvent(newEvent);
     console.log(this.babyService.events);
     console.log(newEvent);
-    this.babyService.events.sort((a, b) => a.date - b.date);
     form.reset();
     this.router.navigate(["book"]);
   }
