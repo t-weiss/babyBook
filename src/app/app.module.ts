@@ -12,7 +12,9 @@ import { FileUploadModule } from "ng2-file-upload";
 import { PhotoUploadComponent } from "./photo-upload/photo-upload.component";
 import { FormsModule } from "@angular/forms";
 import { HomeComponent } from "./home/home.component";
-import { HeaderComponent } from './header/header.component';
+import { HeaderComponent } from "./header/header.component";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { MglTimelineModule } from "angular-mgl-timeline";
 
 @NgModule({
   declarations: [
@@ -28,6 +30,8 @@ import { HeaderComponent } from './header/header.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    BrowserAnimationsModule,
+    MglTimelineModule,
     CloudinaryModule.forRoot(Cloudinary, {
       cloud_name: "babybook",
       upload_preset: "custom_default"

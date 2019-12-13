@@ -16,6 +16,13 @@ export class BookComponent implements OnInit {
   tips: any[];
   tipNumb: number;
 
+  alternate: boolean = true;
+  toggle: boolean = true;
+  color: boolean = false;
+  size: number = 40;
+  expandEnabled: boolean = true;
+  side = "left";
+
   constructor(private babyService: BabyService, private router: Router) {}
 
   ageStuff() {
@@ -51,8 +58,8 @@ export class BookComponent implements OnInit {
     this.events.sort((a, b) => a.date - b.date);
     console.log(this.events);
 
-    this.birth = this.babyService.getBirthStart();
-    console.log(this.birth);
+    // this.birth = this.babyService.getBirthStart();
+    // console.log(this.birth);
 
     // this.age = this.babyService.getAge();
     // console.log(this.age);
@@ -60,5 +67,25 @@ export class BookComponent implements OnInit {
     this.tips = this.babyService.getTips();
     console.log(this.tips);
     this.ageStuff();
+  }
+
+  onHeaderClick(event) {
+    if (!this.expandEnabled) {
+      event.stopPropagation();
+    }
+  }
+
+  onDotClick(event) {
+    if (!this.expandEnabled) {
+      event.stopPropagation();
+    }
+  }
+
+  onExpandEntry(expanded, index) {
+    console.log(`Expand status of entry #${index} changed to ${expanded}`);
+  }
+
+  toggleSide() {
+    this.side = this.side === "left" ? "right" : "left";
   }
 }
