@@ -36,6 +36,10 @@
   .tipBox {
     border: solid green 2px;
   }
+  h2 {
+    background-color: red;
+    /* border-radius: 10px; */
+  }
 }
 
 /* @media screen and (min-width: 600px) {q
