@@ -1,14 +1,30 @@
 <!-- <app-header></app-header> -->
 
-
 <div class="container">
   <div class="content">
     <div class="background">
-      <div class="ham">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
+      <div>
+        <nav role="navigation">
+          <div id="menuToggle">
+            <input type="checkbox" />
+            <span></span>
+            <span></span>
+            <span></span>
+            <ul id="menu">
+              <a routerLink="../home"><li>Home</li></a>
+              <a routerLink="../form"><li>Form</li></a>
+              <a routerLink="../book"><li>Book</li></a>
+              <a routerLink="../about"><li>About us</li></a>
+              <a routerLink="#"><li>Show me more</li></a>
+            </ul>
+          </div>
+        </nav>
       </div>
+      <!-- <div class="ham">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div> -->
       <!-- <img src="/assets/hamMenu.png" alt="hamburger menu" class="ham"> -->
       <div class="white">
         <h1>My Memories Manager</h1>
@@ -30,9 +46,23 @@
       <form (ngSubmit)="onSubmit(form)" #form="ngForm" class="form">
         <h3>Start a new timeline!</h3>
         <label for="childName">This timeline is for</label>
-        <input ngModel type="text" placeholder="name" name="childName" id="childName" required />
+        <input
+          ngModel
+          type="text"
+          placeholder="name"
+          name="childName"
+          id="childName"
+          required
+        />
         <label for="birthday">Birthday </label>
-        <input ngModel type="date" name="birthday" id="birthday" #birthday="ngModel" required />
+        <input
+          ngModel
+          type="date"
+          name="birthday"
+          id="birthday"
+          #birthday="ngModel"
+          required
+        />
         <button class="btn">Lets Begin!</button>
       </form>
     </div>

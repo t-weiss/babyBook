@@ -2,4 +2,7 @@
 <!-- <app-book></app-book> -->
 
 <!-- <app-home></app-home> -->
-<router-outlet></router-outlet>
+<!-- <router-outlet></router-outlet> -->
+<div [@routerAnimations]="getRouteAnimation(route)">
+  <router-outlet #route="outlet"></router-outlet>
+</div>
