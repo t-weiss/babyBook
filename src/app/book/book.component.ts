@@ -58,11 +58,11 @@ export class BookComponent implements OnInit {
     this.events.sort((a, b) => a.date - b.date);
     console.log(this.events);
 
-    // this.birth = this.babyService.getBirthStart();
-    // console.log(this.birth);
+    this.birth = this.babyService.getBirthStart();
+    console.log(this.birth);
 
-    // this.age = this.babyService.getAge();
-    // console.log(this.age);
+    this.age = this.babyService.getAge();
+    console.log(this.age);
 
     this.tips = this.babyService.getTips();
     console.log(this.tips);
