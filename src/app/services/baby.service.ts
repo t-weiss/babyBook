@@ -51,9 +51,14 @@ export class BabyService {
     {
       title: "Baby Developmental Milestones: By 4 years",
       tip1: "Increasingly inventive in fantasy play",
+      tip1Details:
+        "blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah",
       tip2: "Cooperates with other children ",
+      tip2Details: "boo boo boo boo boo booboo boo booboo boo booboo boo boo",
       tip3:
-        "Throws ball overhand and is able to Catches bounced ball most of the time"
+        "Throws ball overhand and is able to Catches bounced ball most of the time",
+      tip3Details:
+        "ha ha ha ha ha ha ha ha ha ha ha ha ha ha ha ha ha ha ha ha "
     }
   ];
 

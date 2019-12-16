@@ -1,3 +1,59 @@
+.timelineDiv {
+  font-family: "Montserrat", sans-serif;
+  height: 80vh;
+  overflow: auto;
+}
+.dot {
+  background-color: red;
+}
+.tipDot {
+  background-color: green;
+}
+
+.timelineDiv {
+  /* width: 500px; */
+}
+.picBox {
+  box-sizing: border-box;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+@media screen and (min-width: 600px) {
+  .timelineDiv {
+    width: 45%;
+    margin: 0%;
+  }
+
+  .expanded .parent {
+    margin: 5%;
+    position: fixed;
+    right: 0px;
+    top: 50px;
+    width: 45%;
+    /* border: solid red 2px; */
+  }
+  .tipBox {
+    border: solid green 2px;
+  }
+  h2 {
+    background-color: red;
+    /* border-radius: 10px; */
+  }
+}
+
+/* @media screen and (min-width: 600px) {q
+  .parent {
+    position: relative;
+  }
+
+  .expanded {
+    position: fixed;
+    right: 0px;
+  }
+} */
+
+/*
 .parent {
   font-family: "Montserrat", sans-serif;
 
@@ -27,12 +83,8 @@
 
 .picBox {
   box-sizing: border-box;
-  /* height: 400px;
-   width: 400px; */
   display: table-cell;
   vertical-align: middle;
-  /* background: blue; */
-  /* display: inline-block; */
 }
 
 .btn-flex {
@@ -53,7 +105,6 @@ button {
 
 @media screen and (min-width: 768px) {
   .parent {
-    /* background-color: #bfc0c0; */
     overflow: auto;
     align-items: flex-end;
   }
@@ -74,7 +125,7 @@ button {
 
   .expanded {
     position: fixed;
-    left: 10%;
+    right: 100%;
     top: 10%;
     border: solid black 2px;
     border-radius: 10px;
@@ -89,7 +140,6 @@ button {
   .babyFacts {
     width: 400px;
     border-radius: 10px;
-    /* height: 150px; */
     position: fixed;
     left: 100px;
     bottom: 10px;
@@ -132,7 +182,6 @@ button {
   .babyFacts {
     width: 500px;
     border-radius: 10px;
-    /* height: 150px; */
     position: fixed;
     left: 1%;
     bottom: 10px;
@@ -165,4 +214,4 @@ button {
     background-color: #bfc0c0;
     margin-right: 10px;
   }
-}
+} */
