@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { BabyService } from "../services/baby.service";
 import { Router } from "@angular/router";
+import { LocalDataBaseService } from "../services/local-data-base.service";
 
 @Component({
   selector: "app-book",
@@ -15,6 +16,7 @@ export class BookComponent implements OnInit {
   age: number;
   tips: any[];
   tipNumb: number;
+  localEvents: any[];
 
   alternate: boolean = true;
   toggle: boolean = true;
@@ -23,7 +25,11 @@ export class BookComponent implements OnInit {
   expandEnabled: boolean = true;
   side = "left";
 
-  constructor(private babyService: BabyService, private router: Router) {}
+  constructor(
+    private babyService: BabyService,
+    private router: Router,
+    private localService: LocalDataBaseService
+  ) {}
 
   ageStuff() {
     if (this.age < 3) {
@@ -42,6 +48,10 @@ export class BookComponent implements OnInit {
       this.tipNumb = 6;
     }
   }
+
+  deleteEvents(index: number) {
+    this.babyService.deleteEvent(index);
+ }
 
   clickEvent(index: number) {
     this.status = !this.status;

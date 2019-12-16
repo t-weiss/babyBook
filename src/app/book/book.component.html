@@ -43,6 +43,8 @@
   <p>{{ tips[tipNumb].tip3 }}</p>
 </div> -->
 
+<!-- <i class="fas fa-times"></i> -->
+
 <app-header></app-header>
 <h1>{{ birth.name }}'s Journal</h1>
 <p>Birthday: {{ birth.birthday | date }}</p>
@@ -53,10 +55,7 @@
 
 <div class="timelineDiv">
   <mgl-timeline [toggle]="toggle" [alternate]="alternate" [side]="side">
-    <mgl-timeline-entry
-      *ngFor="let event of events; let i = index"
-      (expand)="onExpandEntry($event, i)"
-    >
+    <mgl-timeline-entry *ngFor="let event of events; let i = index" (expand)="onExpandEntry($event, i)">
       <mgl-timeline-entry-header class="test" (click)="onHeaderClick($event)">
         <div>{{ event.title }}</div>
       </mgl-timeline-entry-header>
@@ -72,15 +71,12 @@
           <div class="expanded-info">
             <p>{{ event.date | date }}</p>
             <p>{{ event.description }}</p>
+            <button (click)="deleteEvents(i)" class="fas fa-times"></button>
           </div>
         </div>
       </mgl-timeline-entry-content>
-      <mgl-timeline-entry-dot
-        class="dot"
-        color="primary"
-        [size]="size"
-        (click)="onDotClick($event)"
-      ></mgl-timeline-entry-dot>
+      <mgl-timeline-entry-dot class="dot" color="primary" [size]="size" (click)="onDotClick($event)">
+      </mgl-timeline-entry-dot>
       <mgl-timeline-entry-side>{{ event.date | date }}</mgl-timeline-entry-side>
     </mgl-timeline-entry>
 

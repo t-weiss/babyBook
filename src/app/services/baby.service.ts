@@ -75,6 +75,11 @@ export class BabyService {
     this.localDataBase.setEvents(this.events);
   }
 
+  deleteEvent(index) {
+    this.events.splice(index, 1);
+    this.localDataBase.setEvents(this.events);
+  }
+
   constructor(
     private http: HttpClient,
     private localDataBase: LocalDataBaseService
