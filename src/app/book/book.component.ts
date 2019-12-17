@@ -29,7 +29,6 @@ export class BookComponent implements OnInit {
   eventIndex: number;
 
   testColor: string = "blue";
-  // eventIndex: any;
 
   constructor(
     private babyService: BabyService,

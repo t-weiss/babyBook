@@ -1,6 +1,7 @@
 .expandedView {
   display: none;
 }
+
 .everything {
   font-family: "Montserrat", sans-serif;
 }
@@ -12,9 +13,11 @@
   text-align: center;
   border-radius: 10px;
 }
+
 .parent {
   text-align: center;
 }
+
 .mgl-timeline-line {
   background-color: transparent !important;
 }
@@ -23,13 +26,16 @@
   height: 75vh;
   overflow: auto;
 }
+
 .timelineDiv::-webkit-scrollbar {
   display: none;
   /*------------------------ is this a good idea?---------------------- */
 }
+
 .dot {
   background-color: red;
 }
+
 .tipDot {
   background-color: green;
 }
@@ -57,6 +63,17 @@
 }
 
 @media screen and (min-width: 600px) {
+  .btn {
+    display: block;
+    width: auto;
+    padding: 10px;
+    position: absolute;
+    top: 10%;
+    right: 6%;
+    background-color: #aafac8;
+    font-weight: bold;
+  }
+
   .expandedView {
     display: block;
     width: 40%;
@@ -72,12 +89,14 @@
     max-width: 500px;
     overflow: hidden;
   }
+
   .picBox {
     height: 300px;
     width: 400px;
     position: relative;
     margin: auto;
   }
+
   .pic {
     margin: 0;
     position: absolute;
@@ -103,6 +122,7 @@
     padding: 10px;
     padding-top: 15px;
   }
+
   .timelineDiv {
     width: 45%;
     margin: 0%;
@@ -115,6 +135,7 @@
   .tipBox {
     border: solid green 2px;
   }
+
   .expanded-info {
     background-color: lightgray;
     width: 400px;
@@ -128,6 +149,7 @@
     /* margin-left: auto;
     margin-right: auto; */
   }
+
   .expanded-info p {
     padding: 5px;
   }
