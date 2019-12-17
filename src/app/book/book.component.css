@@ -62,7 +62,7 @@
     width: 40%;
     text-align: center;
     background-color: #e6e6e6;
-    height: 470px;
+    height: 480px;
     margin-top: 2%;
     /* height: auto;
     max-height: 600px; */
@@ -93,15 +93,15 @@
     justify-content: space-around;
   }
 
-  /* .eventDiv {
-    padding: 0px;
-    margin-top: 20px;
-  } */
+  .eventDiv {
+    position: relative;
+  }
   .eventTitle {
     color: red;
     font-weight: bold;
     -webkit-text-stroke: 0.05px black;
     padding: 10px;
+    padding-top: 15px;
   }
   .timelineDiv {
     width: 45%;
@@ -131,7 +131,16 @@
   .expanded-info p {
     padding: 5px;
   }
-  .testing123 {
-    /* background-color: pink; */
+  .fas {
+    height: 20px;
+    width: 20px;
+  }
+  .buttonBox {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+  }
+  .delete {
+    margin-right: 5px;
   }
 }

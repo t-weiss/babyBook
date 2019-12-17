@@ -14,8 +14,14 @@
   <div class="pageContent">
     <div class="timelineDiv">
       <mgl-timeline [toggle]="toggle" [alternate]="alternate" [side]="side">
-        <mgl-timeline-entry *ngFor="let event of events; let i = index" (expand)="onExpandEntry($event, i)">
-          <mgl-timeline-entry-header class="head" (click)="onHeaderClick($event)">
+        <mgl-timeline-entry
+          *ngFor="let event of events; let i = index"
+          (expand)="onExpandEntry($event, i)"
+        >
+          <mgl-timeline-entry-header
+            class="head"
+            (click)="onHeaderClick($event)"
+          >
             <div>{{ event.title }}</div>
           </mgl-timeline-entry-header>
           <mgl-timeline-entry-content class="parent">
@@ -30,12 +36,20 @@
               <div class="expanded-info">
                 <p>{{ event.date | date }}</p>
                 <p>{{ event.description }}</p>
-                <button (click)="deleteEvents(i)" class="fas fa-times btn"></button>
+                <button
+                  (click)="deleteEvents(i)"
+                  class="fas fa-times btn"
+                ></button>
                 <button (click)="editEvent(i)" class="fas fa-pen btn"></button>
               </div>
             </div>
           </mgl-timeline-entry-content>
-          <mgl-timeline-entry-dot class="dot" color="primary" [size]="size" (click)="onDotClick($event)">
+          <mgl-timeline-entry-dot
+            class="dot"
+            color="primary"
+            [size]="size"
+            (click)="onDotClick($event)"
+          >
           </mgl-timeline-entry-dot>
           <mgl-timeline-entry-side>{{
             event.date | date
@@ -90,9 +104,9 @@
             <mgl-timeline-entry-header>{{
               tips[tipNumb].tip1
             }}</mgl-timeline-entry-header>
-            <mgl-timeline-entry-content>{{
-              tips[tipNumb].tip1Details
-            }}</mgl-timeline-entry-content>
+            <mgl-timeline-entry-content>
+              {{ tips[tipNumb].tip1Details }}
+            </mgl-timeline-entry-content>
           </mgl-timeline-entry>
 
           <mgl-timeline-entry>
@@ -113,10 +127,16 @@
             }}</mgl-timeline-entry-content>
           </mgl-timeline-entry>
         </mgl-timeline>
-
-        {{ tips[tipNumb].tip1 }}
       </div>
       <div *ngIf="event" class="eventDiv">
+        <span class="buttonBox">
+          <button
+            (click)="deleteEvents(eventIndex)"
+            class="fas fa-times delete"
+          ></button>
+          <button (click)="editEvent(eventIndex)" class="fas fa-pen"></button
+        ></span>
+
         <h2 class="eventTitle">
           {{ event?.title }}
         </h2>
@@ -129,11 +149,6 @@
         <div class="expanded-info">
           <p>{{ event?.date | date }}</p>
           <p>{{ event?.description }}</p>
-          <button
-            (click)="deleteEvents(eventIndex)"
-            class="fas fa-times"
-          ></button>
-          <button (click)="editEvent(eventIndex)" class="fas fa-pen"></button>
         </div>
       </div>
     </div>

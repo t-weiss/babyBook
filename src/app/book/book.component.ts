@@ -17,7 +17,7 @@ export class BookComponent implements OnInit {
   tips: any[];
   tipNumb: number;
   localEvents: any[];
-  filterText: string = "";
+  // filterText: string = "";
 
   alternate: boolean = true;
   toggle: boolean = true;
@@ -29,7 +29,7 @@ export class BookComponent implements OnInit {
   eventIndex: number;
 
   testColor: string = "blue";
-  eventIndex: any;
+  // eventIndex: any;
 
   constructor(
     private babyService: BabyService,
@@ -109,6 +109,7 @@ export class BookComponent implements OnInit {
       this.eventIndex = null;
     }
   }
+
   toggleSide() {
     this.side = this.side === "left" ? "right" : "left";
   }
