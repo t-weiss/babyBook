@@ -9,3 +9,16 @@ body {
   padding: 0;
   margin: 0;
 }
+
+.tipLine .mgl-timeline-line {
+  background-color: transparent !important;
+}
+
+/* @media screen and (min-width: 600px) {
+  .eventDiv {
+    padding: 0px;
+  }
+  mgl-timeline-entry-content {
+    padding: 0px;
+  }
+} */

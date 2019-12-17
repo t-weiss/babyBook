@@ -1,7 +1,31 @@
-.timelineDiv {
+.expandedView {
+  display: none;
+}
+.everything {
   font-family: "Montserrat", sans-serif;
-  height: 80vh;
+}
+
+.timelineHead {
+  box-sizing: border-box;
+  margin: 0px;
+  width: 100%;
+  text-align: center;
+  border-radius: 10px;
+}
+.parent {
+  text-align: center;
+}
+.mgl-timeline-line {
+  background-color: transparent !important;
+}
+
+.timelineDiv {
+  height: 75vh;
   overflow: auto;
+}
+.timelineDiv::-webkit-scrollbar {
+  display: none;
+  /*------------------------ is this a good idea?---------------------- */
 }
 .dot {
   background-color: red;
@@ -10,208 +34,104 @@
   background-color: green;
 }
 
-.timelineDiv {
-  /* width: 500px; */
+.btn {
+  display: block;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+
+  padding: 10px;
+  /* border-radius: 10px; */
+  border: solid black 1px;
+  margin-top: 5px;
+  background-color: #aafac8;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
+
 .picBox {
+  margin: 0px;
   box-sizing: border-box;
-  display: table-cell;
-  vertical-align: middle;
+  text-align: center;
 }
 
 @media screen and (min-width: 600px) {
+  .expandedView {
+    display: block;
+    width: 40%;
+    text-align: center;
+    background-color: #e6e6e6;
+    height: 470px;
+    margin-top: 2%;
+    /* height: auto;
+    max-height: 600px; */
+
+    /* max-height: 50vh; */
+    min-width: 400px;
+    max-width: 500px;
+    overflow: hidden;
+  }
+  .picBox {
+    height: 300px;
+    width: 400px;
+    position: relative;
+    margin: auto;
+  }
+  .pic {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
+  .pageContent {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  /* .eventDiv {
+    padding: 0px;
+    margin-top: 20px;
+  } */
+  .eventTitle {
+    color: red;
+    font-weight: bold;
+    -webkit-text-stroke: 0.05px black;
+    padding: 10px;
+  }
   .timelineDiv {
     width: 45%;
     margin: 0%;
   }
 
-  .expanded .parent {
-    margin: 5%;
-    position: fixed;
-    right: 0px;
-    top: 50px;
-    width: 45%;
-    /* border: solid red 2px; */
+  mgl-timeline-entry-content {
+    display: none;
   }
+
   .tipBox {
     border: solid green 2px;
   }
-  h2 {
-    background-color: red;
-    /* border-radius: 10px; */
-  }
-}
-
-/* @media screen and (min-width: 600px) {q
-  .parent {
-    position: relative;
-  }
-
-  .expanded {
-    position: fixed;
-    right: 0px;
-  }
-} */
-
-/*
-.parent {
-  font-family: "Montserrat", sans-serif;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.hide {
-  display: none;
-}
-
-.event {
-  background-color: lightgrey;
-  width: 400px;
-  text-align: center;
-  margin: 20px;
-  border: solid black 2px;
-  border-radius: 10px;
-}
-
-.babyFacts {
-  font-family: "Montserrat", sans-serif;
-
-  border: solid black 2px;
-}
-
-.picBox {
-  box-sizing: border-box;
-  display: table-cell;
-  vertical-align: middle;
-}
-
-.btn-flex {
-  font-family: "Montserrat", sans-serif;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-button {
-  padding: 10px;
-  border-radius: 5px;
-  background-color: #bfc0c0;
-  width: 55%;
-  margin: 10px 60px;
-}
-
-@media screen and (min-width: 768px) {
-  .parent {
-    overflow: auto;
-    align-items: flex-end;
-  }
-
-  .testParent {
-    height: 85vh;
-    overflow: auto;
-  }
-
-  .event {
-    background-color: lightgrey;
-    width: 250px;
-    text-align: center;
-    margin: 20px;
-    border: solid black 2px;
-    border-radius: 10px;
-  }
-
-  .expanded {
-    position: fixed;
-    right: 100%;
-    top: 10%;
-    border: solid black 2px;
-    border-radius: 10px;
-    width: 400px;
-    margin-bottom: 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .babyFacts {
-    width: 400px;
-    border-radius: 10px;
-    position: fixed;
-    left: 100px;
-    bottom: 10px;
-    background-color: white;
-  }
-
-  .hide {
-    display: initial;
-  }
-
-  .btn-flex {
-    display: flex;
-    justify-content: flex-end;
-  }
-
-  button {
-    width: auto;
-    padding: 5px;
-    border-radius: 5px;
-    background-color: #bfc0c0;
-  }
-}
-
-@media screen and (min-width: 900px) {
-  .expanded {
-    position: fixed;
-    left: 1%;
-    top: 17%;
-    border: solid black 2px;
-    border-radius: 10px;
-    width: 500px;
-    margin-bottom: 30px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .babyFacts {
-    width: 500px;
-    border-radius: 10px;
-    position: fixed;
-    left: 1%;
-    bottom: 10px;
-    background-color: white;
-  }
-
-  .event {
-    background-color: lightgrey;
-    width: 400px;
-    text-align: center;
-    margin: 20px;
-    border: solid black 2px;
-    border-radius: 10px;
-  }
-
   .expanded-info {
+    background-color: lightgray;
+    width: 400px;
     height: 100px;
     overflow: auto;
-  }
+    margin: 10px auto;
+    vertical-align: middle;
 
-  .btn-flex {
-    display: flex;
-    justify-content: flex-end;
+    /* padding: 10px; */
+    /* border-radius: 10px; */
+    /* margin-left: auto;
+    margin-right: auto; */
   }
-
-  button {
-    width: auto;
+  .expanded-info p {
     padding: 5px;
-    border-radius: 5px;
-    background-color: #bfc0c0;
-    margin-right: 10px;
   }
-} */
+  .testing123 {
+    /* background-color: pink; */
+  }
+}
