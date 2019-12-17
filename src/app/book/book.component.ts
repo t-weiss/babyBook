@@ -51,7 +51,7 @@ export class BookComponent implements OnInit {
 
   deleteEvents(index: number) {
     this.babyService.deleteEvent(index);
- }
+  }
 
   clickEvent(index: number) {
     this.status = !this.status;
@@ -59,6 +59,11 @@ export class BookComponent implements OnInit {
   }
   addNewEvent() {
     this.router.navigate(["form"]);
+  }
+
+  editEvent(index: number) {
+    this.router.navigate(["edit"], { queryParams: { id: index }});
+    // this.router.navigate(['/products'], { queryParams: { order: 'popular', 'price-range': 'not-cheap' } });
   }
 
   ngOnInit() {

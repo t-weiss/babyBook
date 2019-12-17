@@ -18,14 +18,4 @@
       </div>
     </div>
   </form>
-  <div class="file" *ngFor="let response of responses; let i = index">
-    <button class="delete-image" *ngIf="!!response.data.delete_token" (click)="deleteImage(response.data, i)">
-      Delete image
-    </button>
-
-    <cl-image *ngIf="response" [public-id]="response.data.public_id">
-      <cl-transformation height="400" width="400" crop="crop"></cl-transformation>
-    </cl-image>
-
-  </div>
 </div>

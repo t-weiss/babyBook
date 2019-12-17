@@ -25,6 +25,7 @@
             <p>{{ event.date | date }}</p>
             <p>{{ event.description }}</p>
             <button (click)="deleteEvents(i)" class="fas fa-times"></button>
+            <button (click)="editEvent(i)" class="fas fa-pen"></button>
           </div>
         </div>
       </mgl-timeline-entry-content>
