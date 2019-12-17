@@ -108,7 +108,7 @@
     margin: 0%;
   }
 
-  mgl-timeline-entry-content {
+  .timelineDiv > * mgl-timeline-entry-content {
     display: none;
   }
 

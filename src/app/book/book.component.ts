@@ -26,6 +26,7 @@ export class BookComponent implements OnInit {
   expandEnabled: boolean = true;
   side = "left";
   event: any;
+  eventIndex: number;
 
   testColor: string = "blue";
   eventIndex: any;

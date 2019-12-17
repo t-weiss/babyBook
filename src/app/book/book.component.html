@@ -82,7 +82,41 @@
     </div>
 
     <div class="expandedView">
-      <div class="eventDiv">
+      <div *ngIf="!event">
+        <mgl-timeline class="tipLine">
+          <h4>Upcoming Milestones to look forward to!</h4>
+
+          <mgl-timeline-entry>
+            <mgl-timeline-entry-header>{{
+              tips[tipNumb].tip1
+            }}</mgl-timeline-entry-header>
+            <mgl-timeline-entry-content>{{
+              tips[tipNumb].tip1Details
+            }}</mgl-timeline-entry-content>
+          </mgl-timeline-entry>
+
+          <mgl-timeline-entry>
+            <mgl-timeline-entry-header>{{
+              tips[tipNumb].tip2
+            }}</mgl-timeline-entry-header>
+            <mgl-timeline-entry-content>{{
+              tips[tipNumb].tip2Details
+            }}</mgl-timeline-entry-content>
+          </mgl-timeline-entry>
+
+          <mgl-timeline-entry>
+            <mgl-timeline-entry-header>{{
+              tips[tipNumb].tip3
+            }}</mgl-timeline-entry-header>
+            <mgl-timeline-entry-content>{{
+              tips[tipNumb].tip3Details
+            }}</mgl-timeline-entry-content>
+          </mgl-timeline-entry>
+        </mgl-timeline>
+
+        {{ tips[tipNumb].tip1 }}
+      </div>
+      <div *ngIf="event" class="eventDiv">
         <h2 class="eventTitle">
           {{ event?.title }}
         </h2>
@@ -95,7 +129,10 @@
         <div class="expanded-info">
           <p>{{ event?.date | date }}</p>
           <p>{{ event?.description }}</p>
-          <button (click)="deleteEvents(eventIndex)" class="fas fa-times"></button>
+          <button
+            (click)="deleteEvents(eventIndex)"
+            class="fas fa-times"
+          ></button>
           <button (click)="editEvent(eventIndex)" class="fas fa-pen"></button>
         </div>
       </div>

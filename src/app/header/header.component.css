@@ -94,10 +94,10 @@ a {
 .title {
   align-self: center;
 }
-/*
-.flex {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  right: 70px;
-} */
+h1 {
+  font-family: "Poiret One", cursive;
+  padding: 3px;
+}
+.fullWidth {
+  background-color: lightpink;
+}
