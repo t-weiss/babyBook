@@ -17,6 +17,7 @@ export class BookComponent implements OnInit {
   tips: any[];
   tipNumb: number;
   localEvents: any[];
+  filterText: string = "";
 
   alternate: boolean = true;
   toggle: boolean = true;
@@ -27,6 +28,7 @@ export class BookComponent implements OnInit {
   event: any;
 
   testColor: string = "blue";
+  eventIndex: any;
 
   constructor(
     private babyService: BabyService,
@@ -65,7 +67,7 @@ export class BookComponent implements OnInit {
   }
 
   editEvent(index: number) {
-    this.router.navigate(["edit"], { queryParams: { id: index }});
+    this.router.navigate(["edit"], { queryParams: { id: index } });
     // this.router.navigate(['/products'], { queryParams: { order: 'popular', 'price-range': 'not-cheap' } });
   }
 
@@ -100,11 +102,12 @@ export class BookComponent implements OnInit {
     console.log(`Expand status of entry #${index} changed to ${expanded}`);
     if (expanded) {
       this.event = this.events[index];
-    } else {
-      // this.event = null;
+      this.eventIndex = index;
+    } else if (index === this.eventIndex) {
+      this.event = null;
+      this.eventIndex = null;
     }
   }
-
   toggleSide() {
     this.side = this.side === "left" ? "right" : "left";
   }
@@ -117,4 +120,15 @@ export class BookComponent implements OnInit {
     }
     return this.testColor;
   }
+
+  // filterByTitle(): any[] {
+  //   if (!this.filterText.trim()) {
+  //     return this.events;
+  //   }
+
+  //   const match = this.filterText.toLowerCase();
+  //   return this.events.filter(event => {
+  //     event.title.toLowerCase().includes(match);
+  //   });
+  // }
 }

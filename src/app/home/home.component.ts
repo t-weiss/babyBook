@@ -20,5 +20,9 @@ export class HomeComponent implements OnInit {
     console.log(birthStart);
   }
 
+  toBook() {
+    this.router.navigate(["book"]);
+  }
+
   ngOnInit() {}
 }

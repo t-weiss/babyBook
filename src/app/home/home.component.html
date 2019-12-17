@@ -1,7 +1,7 @@
 <div class="container">
   <div class="content">
     <div class="background">
-      <div>
+      <!-- <div>
         <nav role="navigation">
           <div id="menuToggle">
             <input type="checkbox" />
@@ -17,14 +17,14 @@
             </ul>
           </div>
         </nav>
-      </div>
+      </div> -->
 
       <div class="white">
         <h1>My Memories Manager</h1>
         <p>You make the memories, we'll keep them straight</p>
       </div>
     </div>
-    
+
     <div class="info">
       <div class="copy">
         <h2 class="start">Start Here!</h2>
@@ -43,6 +43,7 @@
         <label for="birthday">Birthday </label>
         <input ngModel type="date" name="birthday" id="birthday" #birthday="ngModel" required />
         <button class="btn">Lets Begin!</button>
+        <p class="center-text">Already have a book? <button (click)="toBook()">click here</button></p>
       </form>
     </div>
   </div>

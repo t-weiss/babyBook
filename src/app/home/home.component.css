@@ -48,6 +48,10 @@ label {
   font-size: 12px;
 }
 
+.center-text{
+  text-align: center;
+}
+
 div .background {
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
     url("/assets/baby.jpg");

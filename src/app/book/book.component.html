@@ -8,17 +8,14 @@
   <div class="btn-flex">
     <button class="btn" (click)="addNewEvent()">add new event</button>
   </div>
+
+  <!-- <input type="text" placeholder="Filter your events" name="filter" [(ngModel)]="filterText" /> -->
+
   <div class="pageContent">
     <div class="timelineDiv">
       <mgl-timeline [toggle]="toggle" [alternate]="alternate" [side]="side">
-        <mgl-timeline-entry
-          *ngFor="let event of events; let i = index"
-          (expand)="onExpandEntry($event, i)"
-        >
-          <mgl-timeline-entry-header
-            class="head"
-            (click)="onHeaderClick($event)"
-          >
+        <mgl-timeline-entry *ngFor="let event of events; let i = index" (expand)="onExpandEntry($event, i)">
+          <mgl-timeline-entry-header class="head" (click)="onHeaderClick($event)">
             <div>{{ event.title }}</div>
           </mgl-timeline-entry-header>
           <mgl-timeline-entry-content class="parent">
@@ -33,17 +30,13 @@
               <div class="expanded-info">
                 <p>{{ event.date | date }}</p>
                 <p>{{ event.description }}</p>
-                <button (click)="deleteEvents(i)" class="fas fa-times"></button>
-                <button (click)="editEvent(i)" class="fas fa-pen"></button>
+                <button (click)="deleteEvents(i)" class="fas fa-times btn"></button>
+                <button (click)="editEvent(i)" class="fas fa-pen btn"></button>
               </div>
             </div>
           </mgl-timeline-entry-content>
-          <mgl-timeline-entry-dot
-            class="dot"
-            color="primary"
-            [size]="size"
-            (click)="onDotClick($event)"
-          ></mgl-timeline-entry-dot>
+          <mgl-timeline-entry-dot class="dot" color="primary" [size]="size" (click)="onDotClick($event)">
+          </mgl-timeline-entry-dot>
           <mgl-timeline-entry-side>{{
             event.date | date
           }}</mgl-timeline-entry-side>
@@ -87,6 +80,7 @@
         </mgl-timeline-entry>
       </mgl-timeline>
     </div>
+
     <div class="expandedView">
       <div class="eventDiv">
         <h2 class="eventTitle">
@@ -101,14 +95,14 @@
         <div class="expanded-info">
           <p>{{ event?.date | date }}</p>
           <p>{{ event?.description }}</p>
-          <button (click)="deleteEvents(i)" class="fas fa-times"></button>
-          <button (click)="editEvent(i)" class="fas fa-pen"></button>
+          <button (click)="deleteEvents(eventIndex)" class="fas fa-times"></button>
+          <button (click)="editEvent(eventIndex)" class="fas fa-pen"></button>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<button class="testing123" [style.background-color]="blue">
+<!-- <button class="testing123" [style.background-color]="blue">
   This is a test
-</button>
+</button> -->
