@@ -11,17 +11,31 @@
     <input type="text" name="title" id="title" [ngModel]="event.title" />
 
     <label for="date">Date</label>
-    <input [ngModel]="event.date | date:'yyyy-MM-dd'" type="date" name="date" id="date" />
+    <input
+      [ngModel]="event.date | date: 'yyyy-MM-dd'"
+      type="date"
+      name="date"
+      id="date"
+    />
 
     <label for="description">Description</label>
-    <textarea [ngModel]="event.description" rows="10" cols="100" name="description" id="description">
+    <textarea
+      [ngModel]="event.description"
+      rows="10"
+      cols="100"
+      name="description"
+      id="description"
+    >
     </textarea>
-    <div class="titleContainer">
-    </div>
+    <div class="titleContainer"></div>
     <app-photo-upload (publicId)="getPhotoId($event)"></app-photo-upload>
 
     <cl-image *ngIf="photoId" [public-id]="photoId">
-      <cl-transformation height="400" width="400" crop="crop"></cl-transformation>
+      <cl-transformation
+        height="300"
+        width="400"
+        crop="fit"
+      ></cl-transformation>
     </cl-image>
 
     <button class="btn">Save Event</button>

@@ -84,3 +84,10 @@ a {
 .title {
   align-self: center;
 }
+h1 {
+  font-family: "Poiret One", cursive;
+  padding: 3px;
+}
+.fullWidth {
+  background-color: lightpink;
+}

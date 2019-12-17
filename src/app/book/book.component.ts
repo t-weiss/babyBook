@@ -25,6 +25,7 @@ export class BookComponent implements OnInit {
   expandEnabled: boolean = true;
   side = "left";
   event: any;
+  eventIndex: number;
 
   testColor: string = "blue";
 
@@ -65,7 +66,7 @@ export class BookComponent implements OnInit {
   }
 
   editEvent(index: number) {
-    this.router.navigate(["edit"], { queryParams: { id: index }});
+    this.router.navigate(["edit"], { queryParams: { id: index } });
     // this.router.navigate(['/products'], { queryParams: { order: 'popular', 'price-range': 'not-cheap' } });
   }
 
@@ -100,8 +101,10 @@ export class BookComponent implements OnInit {
     console.log(`Expand status of entry #${index} changed to ${expanded}`);
     if (expanded) {
       this.event = this.events[index];
-    } else {
-      // this.event = null;
+      this.eventIndex = index;
+    } else if (index === this.eventIndex) {
+      this.event = null;
+      this.eventIndex = null;
     }
   }
 
