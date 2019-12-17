@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { BabyService } from "../services/baby.service";
-import { Router } from "@angular/router";
+import { Router, RouterOutlet, OutletContext } from "@angular/router";
 
 @Component({
   selector: "app-form",
@@ -8,7 +8,7 @@ import { Router } from "@angular/router";
   styleUrls: ["./form.component.css"]
 })
 export class FormComponent implements OnInit {
-  photoIds = "angular_sample/wmny0d3cecsdempeusfc.jpg";
+  photoId = "angular_sample/wmny0d3cecsdempeusfc.jpg";
 
   constructor(private babyService: BabyService, private router: Router) {}
   onSubmit(form: any): void {
@@ -16,7 +16,7 @@ export class FormComponent implements OnInit {
       title: form.value.title,
       description: form.value.description,
       date: new Date(form.value.date),
-      image: this.photoIds
+      image: this.photoId
     };
 
     this.babyService.addEvent(newEvent);
@@ -30,7 +30,7 @@ export class FormComponent implements OnInit {
   }
 
   getPhotoId(id) {
-    this.photoIds = id;
+    this.photoId = id;
     console.log("get id", id);
   }
 

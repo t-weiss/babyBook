@@ -15,6 +15,8 @@ import { HomeComponent } from "./home/home.component";
 import { HeaderComponent } from "./header/header.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MglTimelineModule } from "angular-mgl-timeline";
+import { AboutComponent } from './about/about.component';
+import { EditFormComponent } from './edit-form/edit-form.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { MglTimelineModule } from "angular-mgl-timeline";
     FormComponent,
     PhotoUploadComponent,
     HomeComponent,
-    HeaderComponent
+    HeaderComponent,
+    AboutComponent,
+    EditFormComponent
   ],
   imports: [
     BrowserModule,

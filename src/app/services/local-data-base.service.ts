@@ -85,5 +85,6 @@ export class LocalDataBaseService {
       return DEFAULT_EVENTS;
     }
   }
+
   constructor() {}
 }
