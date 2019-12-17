@@ -42,7 +42,7 @@
         <input ngModel type="text" placeholder="name" name="childName" id="childName" required />
         <label for="birthday">Birthday </label>
         <input ngModel type="date" name="birthday" id="birthday" #birthday="ngModel" required />
-        <button class="btn">Lets Begin!</button>
+        <button class="btn" [disabled]="form.invalid">Lets Begin!</button>
         <p class="center-text">Already have a book? <button (click)="toBook()">click here</button></p>
       </form>
     </div>
