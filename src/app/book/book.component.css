@@ -1,8 +1,9 @@
 .head:hover {
   cursor: pointer;
 }
+
 .tipLine {
-  margin-right: 25px;
+  margin-right: 50px;
 }
 .dot:hover {
   cursor: pointer;
@@ -23,8 +24,9 @@
 .btn-flex:hover {
   cursor: pointer;
 }
+
 ul {
-  padding: 10px;
+  padding: 15px;
   margin: 0 20px;
   text-align: left;
 }
