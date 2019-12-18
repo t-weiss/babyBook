@@ -33,7 +33,7 @@
 }
 
 .dot {
-  background-color: red;
+  background-color: lightseagreen;
 }
 
 .tipDot {
@@ -154,8 +154,11 @@
     padding: 5px;
   }
   .fas {
-    height: 20px;
-    width: 20px;
+    height: 22px;
+    width: 22px;
+    border: none;
+    background-color: whitesmoke;
+    border-radius: 100%;
   }
   .buttonBox {
     position: absolute;

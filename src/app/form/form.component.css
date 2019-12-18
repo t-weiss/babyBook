@@ -25,6 +25,14 @@ form {
   text-align: left;
 }
 
+:host-context(.theme-pink) form {
+  border: 2px solid pink;
+}
+
+:host-context(.theme-blue) form {
+  border: 2px solid blue;
+}
+
 input {
   display: block;
   width: 100%;

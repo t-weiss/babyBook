@@ -2,11 +2,14 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { LocalDataBaseService } from "./local-data-base.service";
+import { Subject } from "rxjs";
 
 @Injectable({
   providedIn: "root"
 })
 export class BabyService {
+  private subject = new Subject<any>();
+
   babyDevTips: any[] = [
     {
       title: "Baby Developmental Milestones: By 3 Months",
@@ -160,5 +163,12 @@ export class BabyService {
 
   getTips(): any {
     return this.babyDevTips;
+  }
+
+  sendTheme(theme: string) {
+    this.subject.next(theme);
+  }
+  getThemeColor(): Observable<any> {
+    return this.subject.asObservable();
   }
 }

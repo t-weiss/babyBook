@@ -39,11 +39,37 @@
       <form (ngSubmit)="onSubmit(form)" #form="ngForm" class="form">
         <h3>Start a new timeline!</h3>
         <label for="childName">This timeline is for</label>
-        <input ngModel type="text" placeholder="name" name="childName" id="childName" required />
+        <input
+          ngModel
+          type="text"
+          placeholder="name"
+          name="childName"
+          id="childName"
+          required
+        />
         <label for="birthday">Birthday </label>
-        <input ngModel type="date" name="birthday" id="birthday" #birthday="ngModel" required />
+        <input
+          ngModel
+          type="date"
+          name="birthday"
+          id="birthday"
+          #birthday="ngModel"
+          required
+        />
+        <p>select you color theme</p>
+        <label for="blue">Blue</label>
+        <input ngModel type="radio" name="color" id="blue" value="blue" />
+        <label for="pink">Pink</label>
+
+        <input ngModel type="radio" name="color" id="pink" value="pink" />
+        <label for="yellow">Yellow</label>
+
+        <input ngModel type="radio" name="color" id="yellow" value="yellow" />
+
         <button class="btn" [disabled]="form.invalid">Lets Begin!</button>
-        <p class="center-text">Already have a book? <button (click)="toBook()">click here</button></p>
+        <p class="center-text">
+          Already have a book? <button (click)="toBook()">click here</button>
+        </p>
       </form>
     </div>
   </div>

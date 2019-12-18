@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { BabyService } from "../services/baby.service";
 import { Router, RouterOutlet, OutletContext } from "@angular/router";
+import { Subscription } from "rxjs";
 
 @Component({
   selector: "app-form",
@@ -9,8 +10,17 @@ import { Router, RouterOutlet, OutletContext } from "@angular/router";
 })
 export class FormComponent implements OnInit {
   photoId = "angular_sample/wmny0d3cecsdempeusfc.jpg";
+  ThemeColor;
+  subscription: Subscription;
 
-  constructor(private babyService: BabyService, private router: Router) {}
+  constructor(private babyService: BabyService, private router: Router) {
+    this.subscription = this.babyService.getThemeColor().subscribe(theme => {
+      if (theme) {
+        this.ThemeColor = theme;
+      }
+    });
+  }
+
   onSubmit(form: any): void {
     let newEvent = {
       title: form.value.title,
