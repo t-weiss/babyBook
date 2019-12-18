@@ -16,10 +16,17 @@ body {
 
 .mgl-timeline-entry-card-header {
   border-radius: 10px;
+  transition: background-color 200ms;
 }
 
 .mgl-timeline-entry-card {
   border-radius: 10px;
+}
+
+mgl-timeline-entry
+  .mgl-timeline-entry-card
+  .mgl-timeline-entry-card-header:hover {
+  background-color: #afafaf;
 }
 
 /* .mgl-timeline-entry-header.left-align {
