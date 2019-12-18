@@ -1,5 +1,17 @@
+.head:hover {
+  cursor: pointer;
+}
+.dot:hover {
+  cursor: pointer;
+}
+.left-align:hover {
+  cursor: pointer;
+}
 .expandedView {
   display: none;
+}
+.btn-flex:hover {
+  cursor: pointer;
 }
 
 .everything {
@@ -60,8 +72,6 @@
   box-sizing: border-box;
   text-align: center;
 }
-
-
 
 @media screen and (min-width: 600px) {
   .btn {
@@ -129,7 +139,7 @@
     margin: 0%;
   }
 
-  .timelineDiv>* mgl-timeline-entry-content {
+  .timelineDiv > * mgl-timeline-entry-content {
     display: none;
   }
 

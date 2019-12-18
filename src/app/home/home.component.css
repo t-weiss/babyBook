@@ -2,7 +2,18 @@ img {
   width: 100%;
   height: 85vh;
 }
-
+.btn:hover {
+  cursor: pointer;
+}
+.click:hover {
+  cursor: pointer;
+  font-weight: bold;
+  font-size: larger;
+  text-decoration-line: underline;
+}
+input:hover {
+  cursor: pointer;
+}
 .container {
   display: flex;
   justify-content: center;
@@ -43,8 +54,7 @@ input.full {
   border: none;
   border-bottom: 1px solid black;
   background-color: transparent;
-  font-family: "Montserrat",
-  sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 .radio {
@@ -90,8 +100,6 @@ div .background {
   margin-bottom: 15px;
 }
 
-
-
 #menuToggle {
   display: block;
   position: relative;
@@ -135,18 +143,18 @@ div .background {
   transform-origin: 0% 100%;
 }
 
-#menuToggle input:checked~span {
+#menuToggle input:checked ~ span {
   opacity: 1;
   transform: rotate(45deg) translate(-2px, -1px);
   background: #232323;
 }
 
-#menuToggle input:checked~span:nth-last-child(3) {
+#menuToggle input:checked ~ span:nth-last-child(3) {
   opacity: 0;
   transform: rotate(0deg) scale(0.2, 0.2);
 }
 
-#menuToggle input:checked~span:nth-last-child(2) {
+#menuToggle input:checked ~ span:nth-last-child(2) {
   transform: rotate(-45deg) translate(0, -1px);
 }
 
@@ -169,7 +177,7 @@ div .background {
   font-size: 22px;
 }
 
-#menuToggle input:checked~ul {
+#menuToggle input:checked ~ ul {
   transform: none;
 }
 
