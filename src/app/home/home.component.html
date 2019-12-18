@@ -21,36 +21,23 @@
       <form (ngSubmit)="onSubmit(form)" #form="ngForm" class="form">
         <h3>Start a new timeline!</h3>
         <label for="childName">This timeline is for</label>
-        <input
-          ngModel
-          type="text"
-          placeholder="name"
-          name="childName"
-          id="childName"
-          required
-        />
+        <input ngModel type="text" placeholder="name" name="childName" id="childName" required class="full" />
         <label for="birthday">Birthday </label>
-        <input
-          ngModel
-          type="date"
-          name="birthday"
-          id="birthday"
-          #birthday="ngModel"
-          required
-        />
-        <p>select you color theme</p>
+        <input ngModel type="date" name="birthday" id="birthday" #birthday="ngModel" required class="full" />
+        <p>select you color theme:</p>
         <label for="blue">Blue</label>
-        <input ngModel type="radio" name="color" id="blue" value="blue" />
+        <input ngModel type="radio" name="color" id="blue" value="blue" class="radio" />
+
         <label for="pink">Pink</label>
 
-        <input ngModel type="radio" name="color" id="pink" value="pink" />
+        <input ngModel type="radio" name="color" id="pink" value="pink" class="radio" />
         <label for="yellow">Yellow</label>
 
-        <input ngModel type="radio" name="color" id="yellow" value="yellow" />
+        <input ngModel type="radio" name="color" id="yellow" value="yellow" class="radio" />
 
         <button class="btn" [disabled]="form.invalid">Lets Begin!</button>
         <p class="center-text">
-          Already have a book? <button (click)="toBook()">click here</button>
+          Already have a book? <button (click)="toBook()" class="click">click here</button>
         </p>
       </form>
     </div>
