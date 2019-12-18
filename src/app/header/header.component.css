@@ -4,6 +4,20 @@
   background-color: lightseagreen;
 }
 
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title h1 {
+  font-size: 26px;
+}
+
+.logo {
+  width: 65px;
+  height: 65px;
+}
 :host-context(.theme-blue) .fullWidth {
   background-color: #213159;
   color: white;
