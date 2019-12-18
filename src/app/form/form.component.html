@@ -1,5 +1,5 @@
 <app-header></app-header>
-<button class="toEvents" (click)="nextPage()">Go To Events</button>
+<button class="toEvents btn theme" (click)="nextPage()">Go To Events</button>
 
 <div class="container">
   <h2 class="title">Add a New Event to Your Timeline!</h2>
@@ -25,7 +25,6 @@
       id="description"
     >
     </textarea>
-    <div class="titleContainer"></div>
     <app-photo-upload (publicId)="getPhotoId($event)"></app-photo-upload>
     <p>photo preview:</p>
     <div class="picBox">
@@ -38,6 +37,6 @@
       </cl-image>
     </div>
 
-    <button class="btn">Add Event</button>
+    <button class="btn theme">Add Event</button>
   </form>
 </div>

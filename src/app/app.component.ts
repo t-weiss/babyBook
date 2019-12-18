@@ -59,7 +59,7 @@ import { BabyService } from "./services/baby.service";
 // }
 export class AppComponent {
   title = "babyBook";
-  theme: string;
+  theme: string = "blue";
   subscription: Subscription;
   constructor(private babyService: BabyService) {
     this.subscription = this.babyService.getThemeColor().subscribe(theme => {

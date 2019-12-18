@@ -9,7 +9,7 @@ import { Subscription } from "rxjs";
   styleUrls: ["./form.component.css"]
 })
 export class FormComponent implements OnInit {
-  photoId = "angular_sample/wmny0d3cecsdempeusfc.jpg";
+  photoId = "babymanager-logo-blk_mpqxd1.png";
   ThemeColor;
   subscription: Subscription;
 

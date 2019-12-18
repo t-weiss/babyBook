@@ -6,6 +6,30 @@
   flex-direction: column;
   align-content: center;
 }
+.picBox {
+  width: 100%;
+  text-align: center;
+}
+.inputStyle {
+  background-color: whitesmoke;
+  border: none;
+  border-bottom: solid black 2px;
+  font-family: "Montserrat", sans-serif;
+}
+form {
+  background-color: whitesmoke;
+}
+
+:host-context(.theme-blue) .btn {
+  background-color: #3d6098;
+  color: white;
+}
+:host-context(.theme-pink) .btn {
+  background-color: #f53163;
+}
+:host-context(.theme-yellow) .btn {
+  background-color: #f0d200;
+}
 
 .text {
   text-align: center;
@@ -30,7 +54,7 @@ input {
   width: 100%;
   padding: 12px;
   margin-bottom: 10px;
-  border-radius: 10px;
+  /* border-radius: 10px; */
   box-sizing: border-box;
   /* border: none;
   border-bottom: 1px solid grey; */
@@ -63,7 +87,7 @@ textarea {
   box-sizing: border-box;
   width: 100%;
   margin-bottom: 10px;
-  border-radius: 10px;
+  /* border-radius: 10px; */
   padding: 12px;
 }
 

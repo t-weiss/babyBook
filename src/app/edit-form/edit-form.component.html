@@ -1,4 +1,6 @@
-<button class="toEvents" (click)="nextPage()">Go To Events >></button>
+<app-header></app-header>
+
+<button class="toEvents btn" (click)="nextPage()">Go To Events >></button>
 
 <div class="container">
   <h2 class="title">Edit life event!</h2>
@@ -8,7 +10,13 @@
       Fill in each field below to add a new event to your child's timeline.
     </p>
     <label for="title">Title</label>
-    <input type="text" name="title" id="title" [ngModel]="event.title" />
+    <input
+      type="text"
+      class="inputStyle"
+      name="title"
+      id="title"
+      [ngModel]="event.title"
+    />
 
     <label for="date">Date</label>
     <input
@@ -16,6 +24,7 @@
       type="date"
       name="date"
       id="date"
+      class="inputStyle"
     />
 
     <label for="description">Description</label>
@@ -25,18 +34,21 @@
       cols="100"
       name="description"
       id="description"
+      class="inputStyle"
     >
     </textarea>
     <div class="titleContainer"></div>
     <app-photo-upload (publicId)="getPhotoId($event)"></app-photo-upload>
-
-    <cl-image *ngIf="photoId" [public-id]="photoId">
-      <cl-transformation
-        height="300"
-        width="400"
-        crop="fit"
-      ></cl-transformation>
-    </cl-image>
+    <p>photo preview</p>
+    <div class="picBox">
+      <cl-image *ngIf="photoId" [public-id]="photoId">
+        <cl-transformation
+          height="200"
+          width="200"
+          crop="fit"
+        ></cl-transformation>
+      </cl-image>
+    </div>
 
     <button class="btn">Save Event</button>
   </form>

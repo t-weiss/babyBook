@@ -56,6 +56,7 @@ export class BookComponent implements OnInit {
 
   deleteEvents(index: number) {
     this.babyService.deleteEvent(index);
+    this.event = null;
   }
 
   clickEvent(index: number) {

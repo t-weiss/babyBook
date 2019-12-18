@@ -1,0 +1,9 @@
+:host-context(.theme-blue) html {
+  background-color: #abd3eb;
+}
+:host-context(.theme-pink) html {
+  background-color: #f53163;
+}
+:host-context(.theme-yellow) html {
+  background-color: yellow;
+}

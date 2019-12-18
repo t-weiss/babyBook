@@ -6,6 +6,27 @@
   flex-direction: column;
   align-content: center;
 }
+
+:host-context(.theme-blue) .btn.theme {
+  background-color: #3d6098;
+  color: white;
+}
+:host-context(.theme-pink) .btn.theme {
+  background-color: #f53163;
+}
+:host-context(.theme-yellow) .btn.theme {
+  background-color: #f0d200;
+}
+
+:host-context(.theme-blue) .contain {
+  background-color: #abd3eb;
+}
+:host-context(.theme-pink) .contain {
+  background-color: #f53163;
+}
+:host-context(.theme-yellow) .contain {
+  background-color: yellow;
+}
 .inputStyle {
   background-color: whitesmoke;
   border: none;
@@ -33,13 +54,13 @@ form {
   text-align: left;
 }
 
-:host-context(.theme-pink) form {
+/* :host-context(.theme-pink) form {
   border: 2px solid pink;
 }
 
 :host-context(.theme-blue) form {
   border: 2px solid blue;
-}
+} */
 
 input {
   display: block;

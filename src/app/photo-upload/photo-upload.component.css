@@ -21,7 +21,16 @@
   margin-bottom: 10px;
   font-size: 12px;
 }
-
+:host-context(.theme-blue) .upload_button {
+  background-color: #f04b4c;
+  color: white;
+}
+:host-context(.theme-pink) .upload_button {
+  background-color: #e4c2c1;
+}
+:host-context(.theme-yellow) .upload_button {
+  background-color: #e2b2ff;
+}
 .img {
   width: 100px;
   height: 100px;
