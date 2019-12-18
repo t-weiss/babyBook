@@ -9,6 +9,7 @@
 }
 .left-align {
   background-color: indigo;
+  border-radius: 10px;
 }
 
 .left-align:hover {
