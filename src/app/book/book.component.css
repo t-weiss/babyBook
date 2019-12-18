@@ -4,6 +4,7 @@
 
 .everything {
   font-family: "Montserrat", sans-serif;
+  margin: 20px;
 }
 
 .timelineHead {
@@ -42,14 +43,12 @@
 
 .btn {
   display: block;
-  width: 95%;
+  width: 55%;
   margin-left: auto;
   margin-right: auto;
-
   padding: 10px;
-  /* border-radius: 10px; */
+  border-radius: 10px;
   border: solid black 1px;
-  margin-top: 5px;
   background-color: #aafac8;
   font-weight: bold;
   margin-top: 10px;
@@ -61,6 +60,8 @@
   box-sizing: border-box;
   text-align: center;
 }
+
+
 
 @media screen and (min-width: 600px) {
   .btn {
@@ -79,15 +80,14 @@
     width: 40%;
     text-align: center;
     background-color: #e6e6e6;
-    height: 480px;
     margin-top: 2%;
-    /* height: auto;
-    max-height: 600px; */
-
+    height: auto;
+    /* max-height: 600px; */
     /* max-height: 50vh; */
     min-width: 400px;
     max-width: 500px;
     overflow: hidden;
+    padding-bottom: 20px;
   }
 
   .picBox {
@@ -115,8 +115,9 @@
   .eventDiv {
     position: relative;
   }
+
   .eventTitle {
-    color: red;
+    color: lightseagreen;
     font-weight: bold;
     -webkit-text-stroke: 0.05px black;
     padding: 10px;
@@ -128,7 +129,7 @@
     margin: 0%;
   }
 
-  .timelineDiv > * mgl-timeline-entry-content {
+  .timelineDiv>* mgl-timeline-entry-content {
     display: none;
   }
 
@@ -141,18 +142,14 @@
     width: 400px;
     height: 100px;
     overflow: auto;
-    margin: 10px auto;
+    margin: 20px auto;
     vertical-align: middle;
-
-    /* padding: 10px; */
-    /* border-radius: 10px; */
-    /* margin-left: auto;
-    margin-right: auto; */
   }
 
   .expanded-info p {
     padding: 5px;
   }
+
   .fas {
     height: 22px;
     width: 22px;
@@ -160,12 +157,34 @@
     background-color: whitesmoke;
     border-radius: 100%;
   }
+
   .buttonBox {
     position: absolute;
     right: 5px;
     top: 5px;
   }
+
   .delete {
     margin-right: 5px;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .everything {
+    font-family: "Montserrat", sans-serif;
+    margin: 0 40px;
+  }
+
+  .expandedView {
+    display: block;
+    width: 55%;
+    text-align: center;
+    background-color: #e6e6e6;
+    height: 455px;
+    margin-top: 2%;
+    min-width: 400px;
+    max-width: 500px;
+    overflow: hidden;
+    margin-left: 20px;
   }
 }

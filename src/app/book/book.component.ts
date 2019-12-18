@@ -22,7 +22,7 @@ export class BookComponent implements OnInit {
   alternate: boolean = true;
   toggle: boolean = true;
   color: boolean = false;
-  size: number = 40;
+  size: number = 50;
   expandEnabled: boolean = true;
   side = "left";
   event: any;
