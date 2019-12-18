@@ -1,3 +1,53 @@
+:host-context(.theme-blue) .btn {
+  background-color: #3d6098;
+}
+:host-context(.theme-pink) .btn {
+  background-color: #f53163;
+}
+:host-context(.theme-yellow) .btn {
+  background-color: #f0d200;
+}
+
+:host-context(.theme-blue) .dot {
+  background-color: #3d6098;
+}
+:host-context(.theme-pink) .dot {
+  background-color: #f53163;
+}
+:host-context(.theme-yellow) .dot {
+  background-color: #f0d200;
+}
+
+:host-context(.theme-blue) .tipDot {
+  background-color: #f04b4c;
+}
+:host-context(.theme-pink) .tipDot {
+  background-color: #e4c2c1;
+}
+:host-context(.theme-yellow) .tipDot {
+  background-color: #a767ff;
+}
+
+:host-context(.theme-blue) .left-align {
+  background-color: #f04b4c;
+}
+:host-context(.theme-pink) .left-align {
+  background-color: #e4c2c1;
+}
+:host-context(.theme-yellow) .left-align {
+  background-color: #a767ff;
+}
+
+:host-context(.theme-blue) .left-align:hover {
+  background-color: #3d6098;
+}
+:host-context(.theme-pink) .left-align:hover {
+  background-color: #f53163;
+}
+:host-context(.theme-yellow) .left-align:hover {
+  background-color: #f0d200;
+}
+
 .head:hover {
   cursor: pointer;
 }
@@ -96,8 +146,8 @@ ul {
     width: auto;
     padding: 10px;
     position: absolute;
-    top: 10%;
-    right: 6%;
+    top: 6%;
+    right: 10px;
     background-color: #aafac8;
     font-weight: bold;
   }
