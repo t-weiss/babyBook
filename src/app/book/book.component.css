@@ -1,17 +1,30 @@
 .head:hover {
   cursor: pointer;
 }
+.tipLine {
+  margin-right: 25px;
+}
 .dot:hover {
   cursor: pointer;
 }
+.left-align {
+  background-color: indigo;
+}
+
 .left-align:hover {
   cursor: pointer;
+  background-color: hotpink;
 }
 .expandedView {
   display: none;
 }
 .btn-flex:hover {
   cursor: pointer;
+}
+ul {
+  padding: 10px;
+  margin: 0 20px;
+  text-align: left;
 }
 
 .everything {
@@ -93,8 +106,7 @@
     margin-top: 2%;
     height: auto;
     /* box-shadow: 20px 20px 30px 10px lightgray; */
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
-      0 10px 10px rgba(0, 0, 0, 0.22);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
     min-width: 400px;
     max-width: 500px;
     overflow: hidden;
@@ -191,14 +203,14 @@
 
   .expandedView {
     display: block;
-    width: 55%;
+    width: 100%;
     text-align: center;
     background-color: #e6e6e6;
     margin-top: 50px;
-    min-width: 400px;
-    max-width: 500px;
+    min-width: 500px;
+    max-width: 600px;
     overflow: hidden;
     margin-left: 20px;
-    margin-bottom: 40px
+    margin-bottom: 40px;
   }
 }
