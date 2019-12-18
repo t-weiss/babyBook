@@ -16,6 +16,7 @@
   cursor: pointer;
   background-color: hotpink;
 }
+
 .expandedView {
   display: none;
 }
