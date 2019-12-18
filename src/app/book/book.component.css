@@ -1,5 +1,6 @@
 :host-context(.theme-blue) .btn {
   background-color: #3d6098;
+  color: white;
 }
 :host-context(.theme-pink) .btn {
   background-color: #f53163;
@@ -146,7 +147,7 @@ ul {
     width: auto;
     padding: 10px;
     position: absolute;
-    top: 6%;
+    top: 10%;
     right: 10px;
     background-color: #aafac8;
     font-weight: bold;
