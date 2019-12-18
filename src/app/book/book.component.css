@@ -40,6 +40,9 @@
     background-color: red;
     /* border-radius: 10px; */
   }
+  h4 {
+    text-align: center;
+  }
 }
 
 /* @media screen and (min-width: 600px) {q

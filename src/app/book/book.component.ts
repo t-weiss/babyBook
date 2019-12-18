@@ -51,7 +51,7 @@ export class BookComponent implements OnInit {
 
   deleteEvents(index: number) {
     this.babyService.deleteEvent(index);
- }
+  }
 
   clickEvent(index: number) {
     this.status = !this.status;
@@ -63,16 +63,14 @@ export class BookComponent implements OnInit {
 
   ngOnInit() {
     this.events = this.babyService.getEvents();
-    console.log(this.events);
 
     this.birth = this.babyService.getBirthStart();
-    console.log(this.birth);
 
     this.age = this.babyService.getAge();
-    console.log(this.age);
 
     this.tips = this.babyService.getTips();
     console.log(this.tips);
+
     this.ageStuff();
   }
 

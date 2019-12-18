@@ -151,7 +151,8 @@ a {
   text-decoration: none;
 }
 input[type="checkbox"] {
-  opacity: 0;
+  background-color: red;
+  /* opacity: 0; */
 }
 
 @media screen and (min-width: 600px) {
