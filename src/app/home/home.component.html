@@ -28,6 +28,7 @@
           name="childName"
           id="childName"
           required
+          class="full"
         />
         <label for="birthday">Birthday </label>
         <input
@@ -37,16 +38,39 @@
           id="birthday"
           #birthday="ngModel"
           required
+          class="full"
         />
-        <p>select you color theme</p>
+        <p>select you color theme:</p>
         <label for="blue">Blue</label>
-        <input ngModel type="radio" name="color" id="blue" value="blue" />
+        <input
+          ngModel
+          type="radio"
+          name="color"
+          id="blue"
+          value="blue"
+          class="radio"
+        />
+
         <label for="pink">Pink</label>
 
-        <input ngModel type="radio" name="color" id="pink" value="pink" />
+        <input
+          ngModel
+          type="radio"
+          name="color"
+          id="pink"
+          value="pink"
+          class="radio"
+        />
         <label for="yellow">Yellow</label>
 
-        <input ngModel type="radio" name="color" id="yellow" value="yellow" />
+        <input
+          ngModel
+          type="radio"
+          name="color"
+          id="yellow"
+          value="yellow"
+          class="radio"
+        />
 
         <button class="btn" [disabled]="form.invalid">Lets Begin!</button>
         <p class="center-text">

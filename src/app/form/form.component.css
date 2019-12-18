@@ -27,6 +27,33 @@
 :host-context(.theme-yellow) .contain {
   background-color: yellow;
 }
+
+input:hover {
+  cursor: pointer;
+}
+textarea:hover {
+  cursor: alias;
+}
+
+.photoPre {
+  margin-top: 20px;
+}
+
+.toEvents:hover {
+  cursor: pointer;
+  font-weight: bold;
+
+  text-decoration-line: underline;
+}
+.btn:hover {
+  cursor: pointer;
+  font-weight: bold;
+
+  text-decoration-line: underline;
+}
+.upload_button:hover {
+  cursor: pointer;
+}
 .inputStyle {
   background-color: whitesmoke;
   border: none;
@@ -42,6 +69,7 @@
 .picBox {
   width: 100%;
   text-align: center;
+  margin-top: 10px;
 }
 form {
   /* border: 1px solid black; */

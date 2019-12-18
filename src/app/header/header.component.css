@@ -114,3 +114,6 @@ h1 {
   font-family: "Poiret One", cursive;
   padding: 3px;
 }
+h1:hover {
+  cursor: pointer;
+}

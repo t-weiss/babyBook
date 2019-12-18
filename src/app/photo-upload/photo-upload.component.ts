@@ -19,7 +19,6 @@ import { Cloudinary } from "@cloudinary/angular-5.x";
   templateUrl: "photo-upload.component.html",
   styleUrls: ["./photo-upload.component.css"]
 })
-  
 export class PhotoUploadComponent implements OnInit {
   @Input()
   responses: Array<any>;
@@ -27,9 +26,9 @@ export class PhotoUploadComponent implements OnInit {
   @Output()
   publicId = new EventEmitter<string>();
 
-  private hasBaseDropZoneOver: boolean = false;
-  private uploader: FileUploader;
-  private title: string;
+  hasBaseDropZoneOver: boolean = false;
+  uploader: FileUploader;
+  title: string;
 
   constructor(
     private cloudinary: Cloudinary,

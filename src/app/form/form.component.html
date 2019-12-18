@@ -26,7 +26,7 @@
     >
     </textarea>
     <app-photo-upload (publicId)="getPhotoId($event)"></app-photo-upload>
-    <p>photo preview:</p>
+    <p class="photoPre">photo preview:</p>
     <div class="picBox">
       <cl-image *ngIf="photoId" [public-id]="photoId">
         <cl-transformation
