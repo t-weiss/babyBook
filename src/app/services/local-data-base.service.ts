@@ -70,7 +70,7 @@ export class LocalDataBaseService {
       birthStart.birthday = new Date(birthStart.birthday);
       return birthStart;
     } else {
-      return null;
+      return { name: "Baby", birthday: new Date("2018-05-15"), color: "blue" };
     }
   }
   getEvents(): any[] {
