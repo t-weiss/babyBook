@@ -11,14 +11,8 @@
   <div class="pageContent">
     <div class="timelineDiv">
       <mgl-timeline [toggle]="toggle" [alternate]="alternate" [side]="side">
-        <mgl-timeline-entry
-          *ngFor="let event of events; let i = index"
-          (expand)="onExpandEntry($event, i)"
-        >
-          <mgl-timeline-entry-header
-            class="head"
-            (click)="onHeaderClick($event)"
-          >
+        <mgl-timeline-entry *ngFor="let event of events; let i = index" (expand)="onExpandEntry($event, i)">
+          <mgl-timeline-entry-header class="head" (click)="onHeaderClick($event)">
             <div>{{ event.title }}</div>
           </mgl-timeline-entry-header>
           <mgl-timeline-entry-content class="parent">
@@ -37,21 +31,14 @@
               </div>
             </div>
           </mgl-timeline-entry-content>
-          <mgl-timeline-entry-dot
-            class="dot"
-            color="primary"
-            [size]="size"
-            (click)="onDotClick($event)"
-          >
+          <mgl-timeline-entry-dot class="dot" color="primary" [size]="size" (click)="onDotClick($event)">
           </mgl-timeline-entry-dot>
           <mgl-timeline-entry-side>{{
             event.date | date
           }}</mgl-timeline-entry-side>
         </mgl-timeline-entry>
         <mgl-timeline-entry>
-          <mgl-timeline-entry-header class="head">
-            Baby facts</mgl-timeline-entry-header
-          >
+          <mgl-timeline-entry-header> Baby facts</mgl-timeline-entry-header>
           <mgl-timeline-entry-content class="parent tipBox">
             <mgl-timeline class="tipLine">
               <mgl-timeline-entry *ngFor="let tip of tips[tipNumb].tips">
@@ -79,25 +66,17 @@
               tip.category
             }}</mgl-timeline-entry-header>
             <mgl-timeline-entry-content>
-              <ul>
+              <ol>
                 <li *ngFor="let detail of tip.details">{{ detail }}</li>
-              </ul>
+              </ol>
             </mgl-timeline-entry-content>
           </mgl-timeline-entry>
         </mgl-timeline>
       </div>
       <div *ngIf="event" class="eventDiv">
         <span class="buttonBox">
-          <button
-            (click)="deleteEvents(eventIndex)"
-            class="fas fa-times delete"
-          ></button>
-          <button (click)="editEvent(eventIndex)" class="fas fa-pen"></button
-        ></span>
-
-        <h2 class="eventTitle">
-          {{ event?.title }}
-        </h2>
+          <button (click)="deleteEvents(eventIndex)" class="fas fa-times delete"></button>
+          <button (click)="editEvent(eventIndex)" class="fas fa-pen"></button></span>
         <div class="picBox">
           <cl-image class="pic" [public-id]="event?.image">
             <cl-transformation width="400" height="300" crop="fit">
