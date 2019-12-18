@@ -3,11 +3,13 @@ import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { LocalDataBaseService } from "./local-data-base.service";
 import { TipGroup } from "../interfaces/TipGroup";
+import { Subject } from "rxjs";
 
 @Injectable({
   providedIn: "root"
 })
 export class BabyService {
+  private subject = new Subject<any>();
   babyDevTips: TipGroup[] = [
     {
       title: "Baby Developmental Milestones: By 3 Months",
@@ -337,6 +339,7 @@ export class BabyService {
 
   events: any[];
   myBirthStart;
+  // = { name: "Baby", birthday: new Date() }
 
   getEvents(): any {
     return this.events;
@@ -345,6 +348,11 @@ export class BabyService {
   addEvent(newEvent: any): void {
     this.events.push(newEvent);
     this.events.sort((a, b) => a.date - b.date);
+    this.localDataBase.setEvents(this.events);
+  }
+
+  saveEvent(event, index) {
+    this.events[index] = event;
     this.localDataBase.setEvents(this.events);
   }
 
@@ -388,5 +396,12 @@ export class BabyService {
 
   getTips(): any {
     return this.babyDevTips;
+  }
+
+  sendTheme(theme: string) {
+    this.subject.next(theme);
+  }
+  getThemeColor(): Observable<any> {
+    return this.subject.asObservable();
   }
 }

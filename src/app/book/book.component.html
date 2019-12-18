@@ -1,52 +1,81 @@
 <app-header></app-header>
-<h1>{{ birth.name }}'s Journal</h1>
-<p>Birthday: {{ birth.birthday | date }}</p>
 
-<div class="btn-flex">
-  <button (click)="addNewEvent()">add new event</button>
-</div>
+<div class="everything">
+  <div class="timelineHead">
+    <h1>{{ birth.name }}'s Journal</h1>
+    <p>Birthday: {{ birth.birthday | date }}</p>
+  </div>
+  <div class="btn-flex">
+    <button class="btn" (click)="addNewEvent()">add new event</button>
+  </div>
+  <div class="pageContent">
+    <div class="timelineDiv">
+      <mgl-timeline [toggle]="toggle" [alternate]="alternate" [side]="side">
+        <mgl-timeline-entry
+          *ngFor="let event of events; let i = index"
+          (expand)="onExpandEntry($event, i)"
+        >
+          <mgl-timeline-entry-header
+            class="head"
+            (click)="onHeaderClick($event)"
+          >
+            <div>{{ event.title }}</div>
+          </mgl-timeline-entry-header>
+          <mgl-timeline-entry-content class="parent">
+            <div class="eventDiv">
+              <h2>{{ event.title }}</h2>
+              <div class="picBox">
+                <cl-image class="pic" [public-id]="event.image">
+                  <cl-transformation width="400" height="400" crop="fit">
+                  </cl-transformation>
+                </cl-image>
+              </div>
+              <div class="expanded-info">
+                <p>{{ event.date | date }}</p>
+                <p>{{ event.description }}</p>
+                <button
+                  (click)="deleteEvents(i)"
+                  class="fas fa-times btn"
+                ></button>
+                <button (click)="editEvent(i)" class="fas fa-pen btn"></button>
+              </div>
+            </div>
+          </mgl-timeline-entry-content>
+          <mgl-timeline-entry-dot
+            class="dot"
+            color="primary"
+            [size]="size"
+            (click)="onDotClick($event)"
+          >
+          </mgl-timeline-entry-dot>
+          <mgl-timeline-entry-side>{{
+            event.date | date
+          }}</mgl-timeline-entry-side>
+        </mgl-timeline-entry>
+        <mgl-timeline-entry>
+          <mgl-timeline-entry-header> Baby facts</mgl-timeline-entry-header>
+          <mgl-timeline-entry-content class="parent tipBox">
+            <mgl-timeline class="tipLine">
+              <mgl-timeline-entry *ngFor="let tip of tips[tipNumb].tips">
+                <mgl-timeline-entry-header>{{
+                  tip.category
+                }}</mgl-timeline-entry-header>
+                <mgl-timeline-entry-content>
+                  <ol>
+                    <li *ngFor="let detail of tip.details">{{ detail }}</li>
+                  </ol>
+                </mgl-timeline-entry-content>
+              </mgl-timeline-entry>
+            </mgl-timeline>
+          </mgl-timeline-entry-content>
+          <mgl-timeline-entry-dot class="tipDot"></mgl-timeline-entry-dot>
+        </mgl-timeline-entry>
+      </mgl-timeline>
+    </div>
 
-<div class="timelineDiv">
-  <mgl-timeline [toggle]="toggle" [alternate]="alternate" [side]="side">
-    <mgl-timeline-entry
-      *ngFor="let event of events; let i = index"
-      (expand)="onExpandEntry($event, i)"
-    >
-      <mgl-timeline-entry-header class="test" (click)="onHeaderClick($event)">
-        <div>{{ event.title }}</div>
-      </mgl-timeline-entry-header>
-      <mgl-timeline-entry-content class="parent">
-        <div>
-          <h2>{{ event.title }}</h2>
-          <div class="picBox">
-            <cl-image class="pic" [public-id]="event.image">
-              <cl-transformation width="400" height="400" crop="fit">
-              </cl-transformation>
-            </cl-image>
-          </div>
-          <div class="expanded-info">
-            <p>{{ event.date | date }}</p>
-            <p>{{ event.description }}</p>
-            <button (click)="deleteEvents(i)" class="fas fa-times"></button>
-          </div>
-        </div>
-      </mgl-timeline-entry-content>
-      <mgl-timeline-entry-dot
-        class="dot"
-        color="primary"
-        [size]="size"
-        (click)="onDotClick($event)"
-      >
-      </mgl-timeline-entry-dot>
-      <mgl-timeline-entry-side>{{ event.date | date }}</mgl-timeline-entry-side>
-    </mgl-timeline-entry>
-
-    <mgl-timeline-entry>
-      <mgl-timeline-entry-header> Baby facts</mgl-timeline-entry-header>
-      <mgl-timeline-entry-content class="parent tipBox">
-        <mgl-timeline>
-          <h4>{{ tips[tipNumb].title }}</h4>
-
+    <div class="expandedView">
+      <div *ngIf="!event">
+        <mgl-timeline class="tipLine">
           <mgl-timeline-entry *ngFor="let tip of tips[tipNumb].tips">
             <mgl-timeline-entry-header>{{
               tip.category
@@ -58,8 +87,30 @@
             </mgl-timeline-entry-content>
           </mgl-timeline-entry>
         </mgl-timeline>
-      </mgl-timeline-entry-content>
-      <mgl-timeline-entry-dot class="tipDot"></mgl-timeline-entry-dot>
-    </mgl-timeline-entry>
-  </mgl-timeline>
+      </div>
+      <div *ngIf="event" class="eventDiv">
+        <span class="buttonBox">
+          <button
+            (click)="deleteEvents(eventIndex)"
+            class="fas fa-times delete"
+          ></button>
+          <button (click)="editEvent(eventIndex)" class="fas fa-pen"></button
+        ></span>
+
+        <h2 class="eventTitle">
+          {{ event?.title }}
+        </h2>
+        <div class="picBox">
+          <cl-image class="pic" [public-id]="event?.image">
+            <cl-transformation width="400" height="300" crop="fit">
+            </cl-transformation>
+          </cl-image>
+        </div>
+        <div class="expanded-info">
+          <p>{{ event?.date | date }}</p>
+          <p>{{ event?.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

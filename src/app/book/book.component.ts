@@ -17,6 +17,7 @@ export class BookComponent implements OnInit {
   tips: any[];
   tipNumb: number;
   localEvents: any[];
+  // filterText: string = "";
 
   alternate: boolean = true;
   toggle: boolean = true;
@@ -24,6 +25,10 @@ export class BookComponent implements OnInit {
   size: number = 40;
   expandEnabled: boolean = true;
   side = "left";
+  event: any;
+  eventIndex: number;
+
+  testColor: string = "blue";
 
   constructor(
     private babyService: BabyService,
@@ -61,6 +66,10 @@ export class BookComponent implements OnInit {
     this.router.navigate(["form"]);
   }
 
+  editEvent(index: number) {
+    this.router.navigate(["edit"], { queryParams: { id: index } });
+  }
+
   ngOnInit() {
     this.events = this.babyService.getEvents();
 
@@ -88,9 +97,25 @@ export class BookComponent implements OnInit {
 
   onExpandEntry(expanded, index) {
     console.log(`Expand status of entry #${index} changed to ${expanded}`);
+    if (expanded) {
+      this.event = this.events[index];
+      this.eventIndex = index;
+    } else if (index === this.eventIndex) {
+      this.event = null;
+      this.eventIndex = null;
+    }
   }
 
   toggleSide() {
     this.side = this.side === "left" ? "right" : "left";
+  }
+
+  changeColor() {
+    if (this.testColor === "blue") {
+      this.testColor = "red";
+    } else {
+      this.testColor = "blue";
+    }
+    return this.testColor;
   }
 }

@@ -3,6 +3,6 @@
 
 <!-- <app-home></app-home> -->
 <!-- <router-outlet></router-outlet> -->
-<div [@routerAnimations]="getRouteAnimation(route)">
+<div [@routerAnimations]="getRouteAnimation(route)" class="theme-{{ theme }}">
   <router-outlet #route="outlet"></router-outlet>
 </div>

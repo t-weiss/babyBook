@@ -13,11 +13,17 @@ export class HomeComponent implements OnInit {
   onSubmit(form: any): void {
     let birthStart = {
       name: form.value.childName,
-      birthday: new Date(form.value.birthday)
+      birthday: new Date(form.value.birthday),
+      color: form.value.color
     };
     this.router.navigate(["form"]);
     this.babyService.setBabyName(birthStart);
     console.log(birthStart);
+    this.babyService.sendTheme(birthStart.color);
+  }
+
+  toBook() {
+    this.router.navigate(["book"]);
   }
 
   ngOnInit() {}

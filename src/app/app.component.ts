@@ -8,6 +8,8 @@ import {
   transition,
   query
 } from "@angular/animations";
+import { Subscription } from "rxjs";
+import { BabyService } from "./services/baby.service";
 
 @Component({
   selector: "app-root",
@@ -57,8 +59,18 @@ import {
 // }
 export class AppComponent {
   title = "babyBook";
-
+  theme: string;
+  subscription: Subscription;
+  constructor(private babyService: BabyService) {
+    this.subscription = this.babyService.getThemeColor().subscribe(theme => {
+      this.theme = theme;
+    });
+  }
   getRouteAnimation(outlet) {
     return outlet.activatedRouteData.animation;
+  }
+  ngOnDestroy() {
+    // unsubscribe to ensure no memory leaks
+    this.subscription.unsubscribe();
   }
 }

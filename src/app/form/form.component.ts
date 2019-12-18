@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { BabyService } from "../services/baby.service";
 import { Router, RouterOutlet, OutletContext } from "@angular/router";
+import { Subscription } from "rxjs";
 
 @Component({
   selector: "app-form",
@@ -8,15 +9,24 @@ import { Router, RouterOutlet, OutletContext } from "@angular/router";
   styleUrls: ["./form.component.css"]
 })
 export class FormComponent implements OnInit {
-  photoIds = "angular_sample/wmny0d3cecsdempeusfc.jpg";
+  photoId = "angular_sample/wmny0d3cecsdempeusfc.jpg";
+  ThemeColor;
+  subscription: Subscription;
 
-  constructor(private babyService: BabyService, private router: Router) {}
+  constructor(private babyService: BabyService, private router: Router) {
+    this.subscription = this.babyService.getThemeColor().subscribe(theme => {
+      if (theme) {
+        this.ThemeColor = theme;
+      }
+    });
+  }
+
   onSubmit(form: any): void {
     let newEvent = {
       title: form.value.title,
       description: form.value.description,
       date: new Date(form.value.date),
-      image: this.photoIds
+      image: this.photoId
     };
 
     this.babyService.addEvent(newEvent);
@@ -30,7 +40,7 @@ export class FormComponent implements OnInit {
   }
 
   getPhotoId(id) {
-    this.photoIds = id;
+    this.photoId = id;
     console.log("get id", id);
   }
 

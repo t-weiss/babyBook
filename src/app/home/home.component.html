@@ -1,45 +1,20 @@
-<!-- <app-header></app-header> -->
-
 <div class="container">
   <div class="content">
     <div class="background">
-      <div>
-        <nav role="navigation">
-          <div id="menuToggle">
-            <input type="checkbox" />
-            <span></span>
-            <span></span>
-            <span></span>
-            <ul id="menu">
-              <a routerLink="../home"><li>Home</li></a>
-              <a routerLink="../form"><li>Form</li></a>
-              <a routerLink="../book"><li>Book</li></a>
-              <a routerLink="../about"><li>About us</li></a>
-              <a routerLink="#"><li>Show me more</li></a>
-            </ul>
-          </div>
-        </nav>
-      </div>
-      <!-- <div class="ham">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
-      </div> -->
-      <!-- <img src="/assets/hamMenu.png" alt="hamburger menu" class="ham"> -->
       <div class="white">
         <h1>My Memories Manager</h1>
         <p>You make the memories, we'll keep them straight</p>
       </div>
     </div>
-    <!-- <img src="assets/block baby.jpg" alt="baby with block" /> -->
+
     <div class="info">
       <div class="copy">
         <h2 class="start">Start Here!</h2>
         <p>
           My Memories Manager allows you to record and share the important
-          developments in the life of your child. Make your own intractive
+          developments in the life of your child. Make your own interactive
           timeline to document the growth of your child. Along the way enjoy
-          relevent develovement facts and benchmarks.
+          relevant devolvement facts and benchmarks.
         </p>
       </div>
 
@@ -63,7 +38,20 @@
           #birthday="ngModel"
           required
         />
-        <button class="btn">Lets Begin!</button>
+        <p>select you color theme</p>
+        <label for="blue">Blue</label>
+        <input ngModel type="radio" name="color" id="blue" value="blue" />
+        <label for="pink">Pink</label>
+
+        <input ngModel type="radio" name="color" id="pink" value="pink" />
+        <label for="yellow">Yellow</label>
+
+        <input ngModel type="radio" name="color" id="yellow" value="yellow" />
+
+        <button class="btn" [disabled]="form.invalid">Lets Begin!</button>
+        <p class="center-text">
+          Already have a book? <button (click)="toBook()">click here</button>
+        </p>
       </form>
     </div>
   </div>

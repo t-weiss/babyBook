@@ -25,14 +25,6 @@ form {
   text-align: left;
 }
 
-:host-context(.theme-pink) form {
-  border: 2px solid pink;
-}
-
-:host-context(.theme-blue) form {
-  border: 2px solid blue;
-}
-
 input {
   display: block;
   width: 100%;
@@ -54,16 +46,19 @@ input {
   background-color: #aafac8;
   font-weight: bold;
   margin-top: 30px;
+  /* background-image: linear-gradient(to right, pink, lightblue); */
 }
 
 label {
   font-size: 1em;
 }
+
 .title {
   margin-top: 20px;
   margin-bottom: 20px;
   font-size: 26px;
 }
+
 textarea {
   box-sizing: border-box;
   width: 100%;
@@ -91,6 +86,7 @@ textarea {
   margin-top: 30px;
   margin-right: 10px;
 }
+
 @media screen and (min-width: 600px) {
   .container {
     width: 100%;
@@ -111,9 +107,11 @@ textarea {
     width: 100%;
     text-align: center;
   }
+
   form {
     width: 50%;
   }
+
   .toEvents {
     position: absolute;
     right: 100px;
@@ -126,11 +124,13 @@ textarea {
     background-color: #aafac8;
     font-weight: 900px;
   }
+
   .title {
     margin-top: 150px;
     margin-bottom: 20px;
     font-size: 40px;
   }
+
   .text {
     text-align: center;
     margin-bottom: 10px;
