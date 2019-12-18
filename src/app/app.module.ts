@@ -7,7 +7,7 @@ import { AppComponent } from "./app.component";
 import { BookComponent } from "./book/book.component";
 import { FormComponent } from "./form/form.component";
 import { CloudinaryModule } from "@cloudinary/angular-5.x";
-import * as Cloudinary from "cloudinary-core";
+import { Cloudinary } from "cloudinary-core";
 import { FileUploadModule } from "ng2-file-upload";
 import { PhotoUploadComponent } from "./photo-upload/photo-upload.component";
 import { FormsModule } from "@angular/forms";
@@ -15,8 +15,12 @@ import { HomeComponent } from "./home/home.component";
 import { HeaderComponent } from "./header/header.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MglTimelineModule } from "angular-mgl-timeline";
-import { AboutComponent } from './about/about.component';
-import { EditFormComponent } from './edit-form/edit-form.component';
+import { AboutComponent } from "./about/about.component";
+import { EditFormComponent } from "./edit-form/edit-form.component";
+
+export const cloudinaryLib = {
+  Cloudinary: Cloudinary
+};
 
 @NgModule({
   declarations: [
@@ -36,7 +40,7 @@ import { EditFormComponent } from './edit-form/edit-form.component';
     FormsModule,
     BrowserAnimationsModule,
     MglTimelineModule,
-    CloudinaryModule.forRoot(Cloudinary, {
+    CloudinaryModule.forRoot(cloudinaryLib, {
       cloud_name: "babybook",
       upload_preset: "custom_default"
     }),
