@@ -1,6 +1,10 @@
 .fullWidth {
   display: flex;
   flex-direction: row;
+  background-color: lightseagreen;
+}
+h1 {
+  padding-left: 20px;
 }
 
 #menuToggle {
@@ -97,7 +101,4 @@ a {
 h1 {
   font-family: "Poiret One", cursive;
   padding: 3px;
-}
-.fullWidth {
-  background-color: lightpink;
 }
