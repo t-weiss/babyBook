@@ -23,7 +23,6 @@
           </mgl-timeline-entry-header>
           <mgl-timeline-entry-content class="parent">
             <div class="eventDiv">
-              <h2>{{ event.title }}</h2>
               <div class="picBox">
                 <cl-image class="pic" [public-id]="event.image">
                   <cl-transformation width="400" height="400" crop="fit">
@@ -105,6 +104,10 @@
             </cl-transformation>
           </cl-image>
         </div>
+
+        <h2 class="eventTitle">
+          {{ event?.title }}
+        </h2>
         <div class="expanded-info">
           <p>{{ event?.date | date }}</p>
           <p>{{ event?.description }}</p>

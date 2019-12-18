@@ -8,7 +8,7 @@ img {
 .click:hover {
   cursor: pointer;
   font-weight: bold;
-  font-size: larger;
+
   text-decoration-line: underline;
 }
 input:hover {

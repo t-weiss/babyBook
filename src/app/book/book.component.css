@@ -92,12 +92,12 @@
     background-color: #e6e6e6;
     margin-top: 2%;
     height: auto;
-    /* max-height: 600px; */
-    /* max-height: 50vh; */
+    box-shadow: 20px 20px 50px 10px lightgray;
     min-width: 400px;
     max-width: 500px;
     overflow: hidden;
     padding-bottom: 20px;
+    border-radius: 10px;
   }
 
   .picBox {
@@ -105,6 +105,7 @@
     width: 400px;
     position: relative;
     margin: auto;
+    margin-top: 30px;
   }
 
   .pic {
@@ -127,9 +128,9 @@
   }
 
   .eventTitle {
-    color: lightseagreen;
+    /* color: lightseagreen; */
     font-weight: bold;
-    -webkit-text-stroke: 0.05px black;
+    /* -webkit-text-stroke: 0.05px black; */
     padding: 10px;
     padding-top: 15px;
   }
@@ -148,7 +149,6 @@
   }
 
   .expanded-info {
-    background-color: lightgray;
     width: 400px;
     height: 100px;
     overflow: auto;
@@ -171,7 +171,9 @@
   .buttonBox {
     position: absolute;
     right: 5px;
-    top: 5px;
+    top: -20px;
+    margin-bottom: 10px;
+    display: block;
   }
 
   .delete {
